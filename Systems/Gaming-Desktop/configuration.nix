@@ -5,9 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
+
+imports =
     [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
+      ./tarnished.nix
     ];
 
   # Bootloader.
@@ -103,16 +104,6 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.allthebeans = {
-    isNormalUser = true;
-    description = "Some name or something";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kate
-      prusa-slicer
-      git
-    ];
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -149,7 +140,7 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
 
-  # Enables flakes and nix-command. HSonestly nor sure what nix-command does yet
+  # Enables flakes and nix-command. Honestly not sure what nix-command does yet.
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
 }
