@@ -6,6 +6,7 @@
         element-desktop
         discord
         libsForQt5.yakuake
+	kate
     ];
 
 }

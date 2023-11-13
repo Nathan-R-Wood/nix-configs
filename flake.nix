@@ -19,14 +19,14 @@
             Tarnished = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 # Lets me use some unstable packages
-                specialArgs = { inherit nixpkgs-unstable; };
+                # specialArgs = { inherit nixpkgs-unstable; };
                 modules = [
                 ./Systems/Gaming-Desktop/configuration.nix
                 ./Modules/steam.nix
                 ./Modules/general-gui.nix
                 ./Modules/user.nix
                 ./Modules/utilities.nix
-                ./Modules/unstable-gui.nix
+                # ./Modules/unstable-gui.nix
                 ];
             };
         };
