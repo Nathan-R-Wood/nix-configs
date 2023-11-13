@@ -2,7 +2,7 @@
 
     environment.systemPackages = with pkgs; [
         pciutils
-        lsusb
+        usbutils
         btop
         git
         fwupd
