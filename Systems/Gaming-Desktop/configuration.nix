@@ -2,14 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-
-{
-
-  nixpkgs = {
-    system = "x84_64-linux";
-    #config.allowUnfree = true;
-  };
+{ config, pkgs, ... }: {
 
 imports =
     [ # Include the results of the hardware scan.

@@ -19,15 +19,16 @@
             Tarnished = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 # Doom emacs testing
-                specialArgs = { inherit nix-doom-emacs; };
-                specialArgs = { inherit nixpkgs-unstable; };
+                # specialArgs = { inherit nix-doom-emacs; };
+                # specialArgs = { inherit nixpkgs-unstable; };
                 modules = [
                 ./Systems/Gaming-Desktop/configuration.nix
                 ./Modules/steam.nix
                 ./Modules/general-gui.nix
                 ./Modules/user.nix
                 ./Modules/utilities.nix
-                ./Modules/emacs.nix
+                ./Modules/nvme.nix
+                # ./Modules/emacs.nix
                 # ./Modules/unstable-gui.nix
                 ];
             };
