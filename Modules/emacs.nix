@@ -1,4 +1,4 @@
-args@{ flake-inputs, pkgs, ... }: {
+{ nix-doom-emacs, pkgs, ... }: {
     environment.systemPackages =
         let
             doom-emacs = nix-doom-emacs.packages.${system}.default.override {

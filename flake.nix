@@ -19,7 +19,7 @@
             Tarnished = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 # Doom emacs testing
-                specialArgs.flake-inputs = inputs;
+                specialArgs = { inherit nix-doom-emacs; };
                 modules = [
                 ./Systems/Gaming-Desktop/configuration.nix
                 ./Modules/steam.nix
