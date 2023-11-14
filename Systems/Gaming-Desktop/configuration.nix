@@ -6,6 +6,11 @@
 
 {
 
+  nixpkgs = {
+    system = "x84_64-linux";
+    #config.allowUnfree = true;
+  };
+
 imports =
     [ # Include the results of the hardware scan.
       ./tarnished.nix
