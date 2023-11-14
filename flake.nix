@@ -20,7 +20,6 @@
                 system = "x86_64-linux";
                 # Doom emacs testing
                 # specialArgs = { inherit nix-doom-emacs; };
-                # specialArgs = { inherit nixpkgs-unstable; };
                 modules = [
                 ./Systems/Gaming-Desktop/configuration.nix
                 ./Modules/steam.nix
