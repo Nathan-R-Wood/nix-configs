@@ -1,4 +1,4 @@
-{ nix-doom-emacs, pkgs, ... }: {
+{ inputs, nix-doom-emacs, pkgs, ... }: {
     environment.systemPackages =
         let
             doom-emacs = nix-doom-emacs.packages.${system}.default.override {
