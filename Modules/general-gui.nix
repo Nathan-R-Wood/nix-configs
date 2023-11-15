@@ -6,7 +6,8 @@
         element-desktop
         discord
         libsForQt5.yakuake
-	kate
+        kate
+        libsForQt5.kcalc
     ];
 
 }

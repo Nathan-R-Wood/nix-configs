@@ -56,8 +56,13 @@ imports =
     # Only available on driver 515.43.04+
     open = false;
 
-    powerManagement.enable = true;
+    nvidiaSettings = true;
+
+
+    powerManagement.enable = false;
+
   };
+
   virtualisation.docker.enableNvidia = true; # for nvidia-docker
 
   hardware.opengl = {
