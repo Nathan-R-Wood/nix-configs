@@ -9,6 +9,10 @@ imports =
       ./tarnished.nix
     ];
 
+  # Newer Kernel
+
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -54,12 +58,12 @@ imports =
     modesetting.enable = true;
     # Use the open source version of the kernel module
     # Only available on driver 515.43.04+
-    open = false;
+    open = true;
 
     nvidiaSettings = true;
 
 
-    powerManagement.enable = false;
+    powerManagement.enable = true;
 
   };
 

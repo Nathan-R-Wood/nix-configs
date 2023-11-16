@@ -8,6 +8,8 @@
 
     networking.firewall = {
         allowedTCPPorts = [ 24070 ];
+        # still doesn't work also tying udp
+        allowedUDPPorts = [ 24070 ];
     };
 
 }
