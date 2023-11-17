@@ -9,7 +9,10 @@
     };
 
    # If you yourself aren't part of what contributes to the output is this even reality?
-    outputs = inputs@{ self, ...}: with inputs; {
+    outputs = inputs@{ self, ...}: with inputs;
+    let
+        unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+    in {
         # Not sure if anything else goes in here but all of the individual computers do. Seems like the patern is to start with a hostname that forms a little block for lack of a better term.
         # Then that block always equals the nixpkg nixSystem weirdness because otherwise i dont think you get to use the nix repo or any of the nix commands which is pretty important.
         # Inside the bock of the hostname we specify the system which is actually the architecture of the cpu used "aarch64-linux" "riscv64-linux" "x86_64-linux" are probably the only ones i'll end up using.
@@ -19,7 +22,7 @@
             Tarnished = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 # Doom emacs testing
-                # specialArgs = { inherit nix-doom-emacs; };
+                specialArgs = { inherit unstable; };
                 modules = [
                 ./Systems/Gaming-Desktop/configuration.nix
                 ./Modules/steam.nix
@@ -27,8 +30,9 @@
                 ./Modules/user.nix
                 ./Modules/utilities.nix
                 ./Modules/nvme.nix
+                ./Modules/minecraft.nix
                 # ./Modules/emacs.nix
-                # ./Modules/unstable-gui.nix
+                ./Modules/unstable-gui.nix
                 ];
             };
         };
