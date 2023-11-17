@@ -5,6 +5,8 @@
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-23.05";
         nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+        # need this to use system as a variable because god forbid nix be able to do it on its own
+        flake-utils.url = "github:numtide/flake-utils";
         nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
     };
 
@@ -12,6 +14,7 @@
     outputs = inputs@{ self, ...}: with inputs;
     let
         unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+        config.allowUnfree = true;
     in {
         # Not sure if anything else goes in here but all of the individual computers do. Seems like the patern is to start with a hostname that forms a little block for lack of a better term.
         # Then that block always equals the nixpkg nixSystem weirdness because otherwise i dont think you get to use the nix repo or any of the nix commands which is pretty important.
