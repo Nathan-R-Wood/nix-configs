@@ -31,6 +31,7 @@
                 ./Modules/utilities.nix
                 ./Modules/nvme.nix
                 ./Modules/minecraft.nix
+                ./Modules/nvidia.nix
                 # ./Modules/emacs.nix
                 ./Modules/unstable-gui.nix
                 ];
