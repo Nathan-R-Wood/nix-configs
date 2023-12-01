@@ -13,6 +13,7 @@
     boot.kernel.sysctl."vm.max_map_count" = 2147483642;
 
     services.openshh = {
+      enable = true;
       settings.PasswordAuthentication = false;
       settings.PermitRootLogin = false;
       settings.KbdInteractiveAuthentication = false;
