@@ -12,7 +12,7 @@
     #fixes some program compatibiility and doesn't seem to hurt anything.
     boot.kernel.sysctl."vm.max_map_count" = 2147483642;
 
-    services.openshh = {
+    services.openssh = {
       enable = true;
       settings.PasswordAuthentication = false;
       settings.PermitRootLogin = false;
