@@ -39,6 +39,18 @@
                 ./Modules/unstable-gui.nix
                 ];
             };
+
+            Radahn = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
+                  ./Systems/Radahn/configuration.nix
+                  ./Modules/utilities.nix
+                  ./Modules/user.nix
+                  ./Modules/docker.nix
+                ];
+
+            };
+
         };
 # My text editor knows where all the magic semicolons go which is pretty pog honestly.
     };
