@@ -46,6 +46,7 @@
                   ./Systems/Radahn/configuration.nix
                   ./Modules/utilities.nix
                   ./Modules/user.nix
+                  ./Modules/defin.nix
                   ./Modules/docker.nix
                 ];
 
