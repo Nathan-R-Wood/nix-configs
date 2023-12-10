@@ -19,7 +19,8 @@
 
   };
 
-  virtualisation.docker.enableNvidia = true; # for nvidia-docker
+  # virtualisation.docker.enableNvidia = true; # for nvidia-docker
+  virtualisation.podman.enableNvidia = true;
 
   hardware.opengl = {
     enable = true;

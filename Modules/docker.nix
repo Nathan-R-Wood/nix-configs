@@ -1,8 +1,8 @@
 { config, pkgs, ... }: {
 
-  virtualisation.docker = {
+  virtualisation.podman = {
     enable = true;
-    enableOnBoot = true;
-    package = pkgs.docker;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
   };
 }
