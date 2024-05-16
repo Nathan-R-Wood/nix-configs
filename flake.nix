@@ -52,6 +52,16 @@
 
             };
 
+            Blaidd = nixpkgs.lib.nixosSystem {
+                system =  "aarch64-linux";
+                modules = [
+                    ./Systems/Raspberry/configuration.nix
+                    ./Modules/utilities.nix
+                    ./Modules/user.nix
+                    ./Modules/docker.nix
+                ];
+            };
+
         };
 # My text editor knows where all the magic semicolons go which is pretty pog honestly.
     };
