@@ -6,7 +6,7 @@
 
 imports =
     [ # Include the results of the hardware scan.
-      ./Blaidd.nix
+      ./Jar-bairn.nix
     ];
 
   # Bootloader.
@@ -19,7 +19,7 @@ boot = {
   };
 };
 
-  networking.hostName = "Blaidd"; # Define your hostname.
+  networking.hostName = "Jar-bairn"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
