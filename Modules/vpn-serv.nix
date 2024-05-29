@@ -8,20 +8,16 @@
   };
 
   networking.wireguard.interfaces = {
-    wg0 = {
-      ips = [10.69.69.1/24];
-      listenPort = 51820;
-      privateKeyFile = "/home/allthebeans/wireguard-keys/private";
-        peers = [
-          {
-            # Blaidd
-            publicKey = "wDS6zaR9KgITGOw6vpDbD4u8d8LUFSSngno/5VcDYH4=";
-            allowedIPs = ["10.69.69.2/32"];
-          }
-          {
-            # TBD
-          }
-        ];
-    };
+      wg0 = {
+          ips = ["10.69.69.1/24"];
+            listenPort = 51820;
+            privateKeyFile = "/home/allthebeans/wireguard-keys/private";
+            peers = [
+              {
+                  publicKey = "mP28sB+ykEQr6ajtvYEs9WQHpZL08tK2Hw0tS3AX52c=";
+                  allowedIPs = ["10.69.69.2/32"];
+              }
+            ];
+      };
   };
 }
