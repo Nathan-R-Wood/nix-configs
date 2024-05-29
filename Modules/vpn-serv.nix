@@ -11,11 +11,11 @@
     wg0 = {
       ips = [10.69.69.1/24];
       listenport = 51820
-      privateKeyFile = "/home/allthebeans/wiregaurd-keys/private"
+      privateKeyFile = "/home/allthebeans/wireguard-keys/private"
         peers = [
           {
             # Blaidd
-            publicKey = "MMaorcJeSQBLpudkek5owM4FXY1Bnfa5N1f2tEZuG3s=";
+            publicKey = "wDS6zaR9KgITGOw6vpDbD4u8d8LUFSSngno/5VcDYH4=";
             allowedIPs = ["10.69.69.2/32"];
           }
           {
