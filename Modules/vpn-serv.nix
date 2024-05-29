@@ -15,7 +15,7 @@
             peers = [
               {
                   publicKey = "mP28sB+ykEQr6ajtvYEs9WQHpZL08tK2Hw0tS3AX52c=";
-                  allowedIPs = ["10.69.69.2/32"];
+                  allowedIPs = ["10.69.69.2/24"];
               }
             ];
       };
