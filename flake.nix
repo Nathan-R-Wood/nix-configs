@@ -59,6 +59,7 @@
                     ./Modules/utilities.nix
                     ./Modules/user.nix
                     ./Modules/docker.nix
+                    ./Modules/vpn-client.nix
                 ];
             };
 
@@ -69,6 +70,7 @@
                     ./Modules/utilities.nix
                     ./Modules/user.nix
                     ./Modules/docker.nix
+                    ./Modules/vpn-serv.nix
                 ];
             };
 
