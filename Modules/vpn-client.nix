@@ -8,7 +8,7 @@
         privateKeyFile = "/home/allthebeans/wireguard-keys/private";
         peers = [
             {
-                publicKey = "MMaorcJeSQBLpudkek5owM4FXY1Bnfa5N1f2tEZuG3s=";
+                publicKey = "TjecTK50P+xmhXxqB1H/FUbIYVbSyV+WI2ug+7iWhWw=";
                 allowedIPs = ["10.69.69.0/24"];
                 endpoint = "192.168.0.25:51820";
                 persistentKeepalive = 25;

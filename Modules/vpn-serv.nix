@@ -12,9 +12,10 @@
           ips = ["10.69.69.1/24"];
             listenPort = 51820;
             privateKeyFile = "/home/allthebeans/wireguard-keys/private";
+            publicKeyFile = "/home/allthebeans/wireguard-keys/public";
             peers = [
               {
-                  publicKey = "mP28sB+ykEQr6ajtvYEs9WQHpZL08tK2Hw0tS3AX52c=";
+                  publicKey = "Cy3POfXjG0iJzfNEkirAOrt8TVldEo8ez5pT2KVBXyA=";
                   allowedIPs = ["10.69.69.0/24"];
                   endpoint = "192.168.0.134:51820";
               }
