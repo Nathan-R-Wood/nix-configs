@@ -60,6 +60,7 @@
                     ./Modules/user.nix
                     ./Modules/docker.nix
                     ./Modules/vpn-client.nix
+                    ./Modules/nfs-client.nix
                 ];
             };
 

@@ -19,6 +19,11 @@ boot = {
   };
 };
 
+  services.nfs.server.enable = true;
+  services.nfs.server.exports = ''
+    /mnt/2tb/ 10.69.69.0/24(rw,nohide,insecure,no_subtree_check)
+   '';
+
   networking.hostName = "Jar-bairn"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
