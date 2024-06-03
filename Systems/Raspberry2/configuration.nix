@@ -19,7 +19,7 @@ boot = {
   };
 };
 
-  console.enable = true;
+  console.enable = false;
 
   services.nfs.server.enable = true;
   services.nfs.server.exports = ''

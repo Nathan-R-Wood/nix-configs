@@ -19,7 +19,7 @@ boot = {
   };
 };
 
-  console.enable = true;
+  console.enable = false;
 
   networking.hostName = "Blaidd"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
