@@ -48,6 +48,7 @@
                   ./Modules/user.nix
                   ./Modules/defin.nix
                   ./Modules/docker.nix
+                  ./Modules/server-utils.nix
                 ];
 
             };
@@ -61,6 +62,7 @@
                     ./Modules/docker.nix
                     ./Modules/vpn-client.nix
                     ./Modules/nfs-client.nix
+                    ./Modules/server-utils.nix
                 ];
             };
 
@@ -72,6 +74,7 @@
                     ./Modules/user.nix
                     ./Modules/docker.nix
                     ./Modules/vpn-serv.nix
+                    ./Modules/server-utils.nix
                 ];
             };
 
