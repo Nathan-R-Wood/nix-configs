@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
   systemd.tmpfiles.rules = [
-    "f /var/lib/systemd/Linger/allthebeans"
+    "f /var/lib/systemd/linger/allthebeans"
   ];
 }
