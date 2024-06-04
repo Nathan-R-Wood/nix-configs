@@ -3,9 +3,9 @@
   home.homeDirectory = "/home/allthebeans";
   home.stateVersion = "24.05";
   home = {
-    sessionPath = [ "${config.xdg.configHome}/.emacs.d/bin" ];
+    sessionPath = [ "$HOME/.emacs.d/bin" ];
     sessionVariables = {
-      DOOMDIR = "${config.xdg.configHome}/.doom.d";
+      DOOMDIR = "$HOME/.doom.d";
     };
   };
 
