@@ -5,6 +5,8 @@
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-24.05";
         nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+        home-manager.url = "github:nix-community/home-manager/a631666";
+        home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
 
    # If you yourself aren't part of what contributes to the output is this even reality?
@@ -25,27 +27,32 @@
                     };
                 };
                 modules = [
-                ./Systems/Gaming-Desktop/configuration.nix
-                ./Modules/Games/steam.nix
-                ./Modules/Gui/general.nix
-                ./Modules/Users/allthebeans.nix
-                ./Modules/utilities.nix
-                ./Modules/Hardware/nvme.nix
-                ./Modules/Games/minecraft.nix
-                ./Modules/Hardware/nvidia.nix
-                ./Modules/Gui/unstable.nix
+                    home-manager.nixosModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.users.allthebeans = import ./Modules/Gui/home.nix;
+                    }
+                    ./Systems/Gaming-Desktop/configuration.nix
+                    ./Modules/Games/steam.nix
+                    ./Modules/Gui/general.nix
+                    ./Modules/Users/allthebeans.nix
+                    ./Modules/utilities.nix
+                    ./Modules/Hardware/nvme.nix
+                    ./Modules/Games/minecraft.nix
+                    ./Modules/Hardware/nvidia.nix
+                    ./Modules/Gui/unstable.nix
+                    ./Modules/Gui/emacs.nix
                 ];
             };
 
             Radahn = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
-                  ./Systems/Radahn/configuration.nix
-                  ./Modules/utilities.nix
-                  ./Modules/Users/allthebeans.nix
-                  ./Modules/Users/defin.nix
-                  ./Modules/docker.nix
-                  ./Modules/Servers/server-utils.nix
+                    ./Systems/Radahn/configuration.nix
+                    ./Modules/utilities.nix
+                    ./Modules/Users/allthebeans.nix
+                    ./Modules/Users/defin.nix
+                    ./Modules/docker.nix
+                    ./Modules/Servers/server-utils.nix
                 ];
 
             };

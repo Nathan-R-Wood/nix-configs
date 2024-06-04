@@ -1,10 +1,9 @@
-{ inputs, config, nix-doom-emacs, pkgs, ... }: {
-    environment.systemPackages =
-        let
-            doom-emacs = nix-doom-emacs.packages.${system}.default.override {
-                doomPrivateDir = ./doom.d;
-            };
-        in [
-            doom-emacs
-        ];
+{ inputs, config, pkgs, ... }: {
+    environment.systemPackages = with pkgs; [
+        emacs
+        ripgrep
+        coreutils
+        fd
+        clang
+    ];
 }
