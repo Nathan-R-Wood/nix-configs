@@ -11,21 +11,22 @@
     };
 
    # If you yourself aren't part of what contributes to the output is this even reality?
-    outputs = inputs@{ self, ...}: with inputs;
-    let
-        unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
-        config.allowUnfree = true;
-    in {
+    outputs = inputs@{ self, ...}: with inputs; {
         # Not sure if anything else goes in here but all of the individual computers do. Seems like the patern is to start with a hostname that forms a little block for lack of a better term.
         # Then that block always equals the nixpkg nixSystem weirdness because otherwise i dont think you get to use the nix repo or any of the nix commands which is pretty important.
         # Inside the bock of the hostname we specify the system which is actually the architecture of the cpu used "aarch64-linux" "riscv64-linux" "x86_64-linux" are probably the only ones i'll end up using.
         # It also looks like some inputs might need to be made and later referenced again in the modules section for the raspberry pi to work.
         # The modules section is just a list of files that will be referenced and loaded for that systems config. I can use that to separate individual programs or groups of programs like say obs and kdenlive to only be on my main desktop and maybe the steam deck since those are the only systems that will have both a gui and the power nescesary to do video recording/editing.
         nixosConfigurations = {
-            Tarnished = nixpkgs.lib.nixosSystem {
+            Tarnished = nixpkgs.lib.nixosSystem rec {
                 system = "x86_64-linux";
                 # Doom emacs testing
-                specialArgs = { inherit unstable; };
+                specialArgs = {
+                    pkgs-unstable = import nixpkgs-unstable {
+                        inherit system;
+                        config.allowUnfree = true;
+                    };
+                };
                 modules = [
                 ./Systems/Gaming-Desktop/configuration.nix
                 ./Modules/steam.nix
