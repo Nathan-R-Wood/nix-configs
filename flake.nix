@@ -26,14 +26,14 @@
                 };
                 modules = [
                 ./Systems/Gaming-Desktop/configuration.nix
-                ./Modules/steam.nix
-                ./Modules/general-gui.nix
-                ./Modules/user.nix
+                ./Modules/Games/steam.nix
+                ./Modules/Gui/general.nix
+                ./Modules/Users/allthebeans.nix
                 ./Modules/utilities.nix
-                ./Modules/nvme.nix
-                ./Modules/minecraft.nix
-                ./Modules/nvidia.nix
-                ./Modules/unstable-gui.nix
+                ./Modules/Hardware/nvme.nix
+                ./Modules/Games/minecraft.nix
+                ./Modules/Hardware/nvidia.nix
+                ./Modules/Gui/unstable.nix
                 ];
             };
 
@@ -42,10 +42,10 @@
                 modules = [
                   ./Systems/Radahn/configuration.nix
                   ./Modules/utilities.nix
-                  ./Modules/user.nix
-                  ./Modules/defin.nix
+                  ./Modules/Users/allthebeans.nix
+                  ./Modules/Users/defin.nix
                   ./Modules/docker.nix
-                  ./Modules/server-utils.nix
+                  ./Modules/Servers/server-utils.nix
                 ];
 
             };
@@ -55,11 +55,11 @@
                 modules = [
                     ./Systems/Raspberry/configuration.nix
                     ./Modules/utilities.nix
-                    ./Modules/user.nix
+                    ./Modules/Users/allthebeans.nix
                     ./Modules/docker.nix
-                    ./Modules/vpn-client.nix
-                    ./Modules/nfs-client.nix
-                    ./Modules/server-utils.nix
+                    ./Modules/Servers/vpn-client.nix
+                    ./Modules/Servers/nfs-client.nix
+                    ./Modules/Servers/server-utils.nix
                 ];
             };
 
@@ -68,10 +68,10 @@
                 modules = [
                     ./Systems/Raspberry2/configuration.nix
                     ./Modules/utilities.nix
-                    ./Modules/user.nix
+                    ./Modules/Users/allthebeans.nix
                     ./Modules/docker.nix
-                    ./Modules/vpn-serv.nix
-                    ./Modules/server-utils.nix
+                    ./Modules/Servers/vpn-serv.nix
+                    ./Modules/Servers/server-utils.nix
                 ];
             };
 
