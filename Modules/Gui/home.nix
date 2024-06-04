@@ -13,7 +13,7 @@
     enable = true;
     configFile = {
       "$HOME/.emacs.d" = {
-        source = pkgs.fetchgit { url = "https://github.com/doomemacs/doomemacs"; };
+        source = pkgs.fetchgit { url = "https://github.com/doomemacs/doomemacs"; hash = ""; };
       };
     };
   };
