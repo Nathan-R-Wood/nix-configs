@@ -5,9 +5,9 @@
         firefox
         element-desktop
         discord
-        libsForQt5.yakuake
-        kate
-        libsForQt5.kcalc
+        kdePackages.yakuake
+        kdePackages.kate
+        kdePackages.kcalc
     ];
 
 }
