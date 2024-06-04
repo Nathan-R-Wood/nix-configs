@@ -7,14 +7,14 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./malenia.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "Nixtop"; # Define your hostname.
+  networking.hostName = "Malenia"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -46,13 +46,13 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
+    xkb.variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -81,13 +81,10 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.allthebeans = {
     isNormalUser = true;
-    description = "Beans and Toast";
+    description = "Some name or something";
     extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [
-      brave
-      kate
       libsForQt5.kdeconnect-kde
-      prusa-slicer
       arduino
     ];
   };
@@ -98,12 +95,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	nano
-  git
-  emacs
-  ripgrep
-  coreutils
-  fd
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

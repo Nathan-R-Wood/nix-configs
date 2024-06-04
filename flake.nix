@@ -44,6 +44,19 @@
                 ];
             };
 
+            Malenia = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
+                    ./Systems/Laptop/configuration.nix
+                    ./Modules/Gui/general.nix
+                    ./Modules/Hardware/nvme.nix
+                    ./Modules/utilities.nix
+                    ./Modules/Users/allthebeans.nix
+                    ./Modules/docker.nix
+                ];
+
+            };
+
             Radahn = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
