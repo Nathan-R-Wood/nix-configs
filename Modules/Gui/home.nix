@@ -14,7 +14,7 @@
     enable = true;
     configFile = {
       "../.emacs.d" = {
-        source = pkgs.fetchgit { url = "https://github.com/doomemacs/doomemacs"; rev = "517daa4ed9168855c202ba2fd28920f6ee17249f"; };
+        source = builtins.fetchGit { url = "https://github.com/doomemacs/doomemacs"; rev = "517daa4ed9168855c202ba2fd28920f6ee17249f"; };
       };
     };
   };
