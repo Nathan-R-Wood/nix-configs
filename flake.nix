@@ -5,9 +5,6 @@
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-24.05";
         nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-        # need this to use system as a variable because god forbid nix be able to do it on its own
-        flake-utils.url = "github:numtide/flake-utils";
-        nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
     };
 
    # If you yourself aren't part of what contributes to the output is this even reality?
@@ -36,7 +33,6 @@
                 ./Modules/nvme.nix
                 ./Modules/minecraft.nix
                 ./Modules/nvidia.nix
-                # ./Modules/emacs.nix
                 ./Modules/unstable-gui.nix
                 ];
             };

@@ -1,10 +1,10 @@
-{ config, pkgs, ... }: {
+{ config, pkgs-unstable, ... }: {
   # for Nvidia GPU
 
   services.xserver.videoDrivers = ["nvidia"]; # will install nvidia-vaapi-driver by default
   hardware.nvidia = {
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
 
     # Modesetting is needed for most Wayland compositors
     modesetting.enable = true;
