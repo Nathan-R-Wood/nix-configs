@@ -12,7 +12,7 @@
   xdg = {
     enable = true;
     configFile = {
-      "emacs" = {
+      "$HOME/.emacs.d" = {
         source = pkgs.fetchgit { url = "https://github.com/doomemacs/doomemacs"; };
       };
     };
