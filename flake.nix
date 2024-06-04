@@ -10,7 +10,10 @@
     };
 
    # If you yourself aren't part of what contributes to the output is this even reality?
-    outputs = inputs@{ self, ...}: with inputs; {
+    outputs = inputs@{ self, ...}: with inputs;
+    let
+       nix.settings.experimental-features = ["nix-command" "flakes"];
+    in{
         # Not sure if anything else goes in here but all of the individual computers do. Seems like the patern is to start with a hostname that forms a little block for lack of a better term.
         # Then that block always equals the nixpkg nixSystem weirdness because otherwise i dont think you get to use the nix repo or any of the nix commands which is pretty important.
         # Inside the bock of the hostname we specify the system which is actually the architecture of the cpu used "aarch64-linux" "riscv64-linux" "x86_64-linux" are probably the only ones i'll end up using.
@@ -47,6 +50,11 @@
             Malenia = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
+                    home-manager.nixosModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.users.allthebeans = import ./Modules/Gui/home.nix;
+                    }
+                    ./Modules/Gui/emacs.nix
                     ./Systems/Laptop/configuration.nix
                     ./Modules/Gui/general.nix
                     ./Modules/Hardware/nvme.nix
