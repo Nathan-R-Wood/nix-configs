@@ -22,7 +22,6 @@
         nixosConfigurations = {
             Tarnished = nixpkgs.lib.nixosSystem rec {
                 system = "x86_64-linux";
-                # Doom emacs testing
                 specialArgs = {
                     pkgs-unstable = import nixpkgs-unstable {
                         inherit system;
@@ -34,6 +33,7 @@
                         home-manager.useGlobalPkgs = true;
                         home-manager.users.allthebeans = import ./Modules/Gui/home.nix;
                     }
+                    ./Modules/allow-unfree.nix
                     ./Systems/Gaming-Desktop/configuration.nix
                     ./Modules/Games/steam.nix
                     ./Modules/Gui/general.nix
