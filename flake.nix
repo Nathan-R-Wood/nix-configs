@@ -44,6 +44,7 @@
                     ./Modules/Hardware/nvidia.nix
                     ./Modules/Gui/unstable.nix
                     ./Modules/Gui/emacs.nix
+                    ./Modules/Gui/heavy.nix
                 ];
             };
 
