@@ -1,6 +1,7 @@
 { config, pkgs-unstable, ... }: {
   # for Nvidia GPU
   boot.kernelModules = [ "nvidia" "nvidia_uvm" "nvidia_drm" "nvidia_modeset" ];
+  boot.kernelPackages = pkgs-unstable.linuxPackages_latest;
   services.xserver.videoDrivers = ["nvidia"]; # will install nvidia-vaapi-driver by default.
   hardware.nvidia-container-toolkit.enable = true;
   hardware.nvidia = {
