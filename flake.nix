@@ -48,7 +48,7 @@
                 ];
             };
 
-            Malenia = nixpkgs.lib.nixosSystem {
+            Malenia = nixpkgs.lib.nixosSystem rec {
                 system = "x86_64-linux";
                 specialArgs = {
                     pkgs-unstable = import nixpkgs-unstable {
