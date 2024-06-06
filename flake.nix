@@ -65,7 +65,6 @@
                     ./Modules/Hardware/nvme.nix
                     ./Modules/utilities.nix
                     ./Modules/Users/allthebeans.nix
-                    ./Modules/docker.nix
                 ];
 
             };
@@ -77,7 +76,6 @@
                     ./Modules/utilities.nix
                     ./Modules/Users/allthebeans.nix
                     ./Modules/Users/defin.nix
-                    ./Modules/docker.nix
                     ./Modules/Servers/server-utils.nix
                 ];
 
@@ -89,7 +87,6 @@
                     ./Systems/Raspberry/configuration.nix
                     ./Modules/utilities.nix
                     ./Modules/Users/allthebeans.nix
-                    ./Modules/docker.nix
                     ./Modules/Servers/vpn-client.nix
                     ./Modules/Servers/nfs-client.nix
                     ./Modules/Servers/server-utils.nix
@@ -102,7 +99,6 @@
                     ./Systems/Raspberry2/configuration.nix
                     ./Modules/utilities.nix
                     ./Modules/Users/allthebeans.nix
-                    ./Modules/docker.nix
                     ./Modules/Servers/vpn-serv.nix
                     ./Modules/Servers/server-utils.nix
                 ];

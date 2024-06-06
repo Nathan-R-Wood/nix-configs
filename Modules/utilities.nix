@@ -1,7 +1,15 @@
 { config, pkgs, ... }: {
-  # This file is for userful utitilites that every machine will have, so no gui or system specific packages.
+  # This file is for useful utitilites that every machine will have, so no gui or system specific packages.
   # Enables nix command and flakes.
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  # Every machine has podman so it's being moved here.
+  virtualisation.containers.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
 
   environment.systemPackages = with pkgs; [
     pciutils # lspci
