@@ -1,7 +1,11 @@
 { config, pkgs-unstable, ... }: {
   # for Nvidia GPU
-  boot.kernelModules = [ "nvidia" "nvidia_uvm" "nvidia_drm" "nvidia_modeset" ];
-  boot.kernelPackages = pkgs-unstable.linuxPackages_latest;
+  #
+  # This seems to be implied by modesetting.enable = true; but leaving it here just in case.
+  # boot.kernelModules = [ "nvidia" "nvidia_uvm" "nvidia_drm" "nvidia_modeset" ];
+
+  # Kernel 6.9 and nvidia 555 have issues right now.
+  boot.kernelPackages = pkgs-unstable.linuxPackages_6_8;
   services.xserver.videoDrivers = ["nvidia"]; # will install nvidia-vaapi-driver by default.
   hardware.nvidia-container-toolkit.enable = true;
   hardware.nvidia = {
