@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs-unstable, ... }: {
   # for Nvidia GPU
   boot.kernelModules = [ "nvidia" "nvidia_uvm" "nvidia_drm" "nvidia_modeset" ];
 

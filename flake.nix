@@ -10,7 +10,7 @@
     };
 
    # If you yourself aren't part of what contributes to the output is this even reality?
-    outputs = inputs@{ self, ...}: with inputs;
+    outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, ...}: with inputs;
     let
        nix.settings.experimental-features = ["nix-command" "flakes"];
     in{
