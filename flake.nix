@@ -20,8 +20,7 @@
         # It also looks like some inputs might need to be made and later referenced again in the modules section for the raspberry pi to work.
         # The modules section is just a list of files that will be referenced and loaded for that systems config. I can use that to separate individual programs or groups of programs like say obs and kdenlive to only be on my main desktop and maybe the steam deck since those are the only systems that will have both a gui and the power nescesary to do video recording/editing.
         nixosConfigurations = {
-            Tarnished {
-                nixpkgs.lib.nixosSystem rec {
+            Tarnished = nixpkgs.lib.nixosSystem rec {
                 system = "x86_64-linux";
                 specialArgs = {
                     pkgs-unstable = import nixpkgs-unstable {
@@ -47,7 +46,6 @@
                     ./Modules/Gui/emacs.nix
                     ./Modules/Gui/heavy.nix
                 ];
-                };
             };
 
             Malenia = nixpkgs.lib.nixosSystem {
