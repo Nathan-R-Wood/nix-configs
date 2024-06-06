@@ -86,8 +86,4 @@ boot = {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-
-  # Enables flakes and nix-command. Honestly not sure what nix-command does yet.
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
 }
