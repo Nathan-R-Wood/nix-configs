@@ -4,22 +4,19 @@
 
 { config, pkgs, ... }: {
 
-imports =
-    [ # Include the results of the hardware scan.
-      ./Blaidd.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./Blaidd.nix
+  ];
 
   # Bootloader.
-boot = {
-  kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
-  initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
-  loader = {
-    grub.enable = false;
-    generic-extlinux-compatible.enable = true;
+  boot = {
+    kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
+    initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
+    loader = {
+      grub.enable = false;
+      generic-extlinux-compatible.enable = true;
+    };
   };
-};
-
-  console.enable = false;
 
   networking.hostName = "Blaidd"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -31,31 +28,8 @@ boot = {
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "America/Boise";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = false;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -66,9 +40,6 @@ boot = {
   # };
 
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
