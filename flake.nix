@@ -66,7 +66,6 @@
                     ./Modules/utilities.nix
                     ./Modules/Users/allthebeans.nix
                 ];
-
             };
 
             Radahn = nixpkgs.lib.nixosSystem {
@@ -78,7 +77,6 @@
                     ./Modules/Users/defin.nix
                     ./Modules/Servers/server-utils.nix
                 ];
-
             };
 
             Blaidd = nixpkgs.lib.nixosSystem {
