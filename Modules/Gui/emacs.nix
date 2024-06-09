@@ -6,5 +6,7 @@
         fd
         clang
         cmake
+        gnumake
+        gcc
     ];
 }
