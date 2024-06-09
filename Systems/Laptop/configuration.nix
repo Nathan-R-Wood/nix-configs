@@ -25,7 +25,8 @@
   networking.networkmanager.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.wayland.enable = true;
+  services.xserver.enable = true; # Naming in nix is still cursed. Need this for sddm even wayland only.
+  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Enable CUPS to print documents.
@@ -64,15 +65,11 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-  programs.kdeconnect.enable = true;
-
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [{from = 1714; to = 1764;} ];
   # networking.firewall.allowedUDPPorts = [{from = 1714; to = 1764;} ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = true;
+  networking.firewall.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

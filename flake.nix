@@ -43,6 +43,7 @@
                     ./Modules/Gui/emacs.nix
                     ./Modules/Gui/fonts.nix
                     ./Modules/Gui/heavy.nix
+                    ./Modules/Gui/kdepackages.nix
                 ];
             };
 
@@ -66,6 +67,7 @@
                     ./Modules/Hardware/nvme.nix
                     ./Modules/utilities.nix
                     ./Modules/Users/allthebeans.nix
+                    ./Modules/Gui/kdepackages.nix
                 ];
             };
 
