@@ -8,5 +8,7 @@
         cmake
         gnumake
         gcc
+        libvterm
+        python3
     ];
 }
