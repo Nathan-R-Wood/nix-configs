@@ -5,5 +5,6 @@
         coreutils
         fd
         clang
+        cmake
     ];
 }
