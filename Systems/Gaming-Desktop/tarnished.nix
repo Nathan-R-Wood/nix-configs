@@ -8,24 +8,21 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/51f0b0f0-9813-4fcd-838f-cb87cdd9c38b";
-      fsType = "ext4";
+    { device = "/dev/disk/by-uuid/2e831617-96db-4831-b74a-db466cc6f111";
+      fsType = "btrfs";
+      options = ["noatime" "ssd" "space_cache=v2" "defaults"];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/AF6D-F3E9";
+    { device = "/dev/disk/by-uuid/6C01-2C33";
       fsType = "vfat";
-    };
-
-  fileSystems."/mnt/NewGames" =
-    { device = "/dev/disk/by-uuid/ebc712b6-2a9a-45e7-b009-ed3787f19cae";
-      fsType = "ext4";
+      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   fileSystems."/mnt/Games" =
@@ -33,7 +30,15 @@
       fsType = "ext4";
     };
 
-  swapDevices = [ ];
+  fileSystems."/mnt/NewGames" =
+    { device = "/dev/disk/by-uuid/ebc712b6-2a9a-45e7-b009-ed3787f19cae";
+      fsType = "ext4";
+    };
+
+  swapDevices = [ {
+    device = "/mnt/NewGames/.swapfile";
+    size = 18*1024;
+  } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

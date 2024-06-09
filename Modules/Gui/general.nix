@@ -2,7 +2,7 @@
 
     environment.systemPackages = with pkgs; [
         qmk
-        firefox
+        brave
         element-desktop
         discord
         kdePackages.yakuake
