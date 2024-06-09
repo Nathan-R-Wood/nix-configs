@@ -9,6 +9,7 @@
         gnumake
         gcc
         libvterm
+        libtool
         python3
     ];
 }
