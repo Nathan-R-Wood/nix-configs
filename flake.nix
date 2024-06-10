@@ -61,6 +61,7 @@
                         home-manager.users.allthebeans = import ./Modules/Gui/home.nix;
                     }
                     ./Modules/Gui/emacs.nix
+                    ./Modules/Gui/fonts.nix
                     ./Systems/Laptop/configuration.nix
                     ./Modules/Gui/general.nix
                     ./Modules/Gui/unstable.nix
