@@ -9,8 +9,4 @@
       DOOMDIR = "$HOME/.doom.d";
     };
   };
-  programs.git = {
-    userName = "nathan-r-wood";
-    userEmail = "nathanroywood@proton.me";
-  };
 }
