@@ -41,19 +41,11 @@
     description = "Some name or something";
     extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [
-      libsForQt5.kdeconnect-kde
-      arduino
     ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
