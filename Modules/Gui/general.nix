@@ -5,10 +5,6 @@
         brave
         element-desktop
         discord
-        kdePackages.yakuake
-        kdePackages.kate
-        kdePackages.kcalc
-        kdePackages.polkit-kde-agent-1
     ];
     # Configure keymap in X11 xWayland also requires this atleast from what i can find.
     services.xserver = {
