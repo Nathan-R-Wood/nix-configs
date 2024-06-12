@@ -14,7 +14,6 @@
     pciutils # lspci
     usbutils # lsusb
     btop # prettier top
-    git # flakes needs it so every machine needs it
   ];
   # Lets some things get firmware updates which probably only helps.
   services.fwupd.enable = true;
