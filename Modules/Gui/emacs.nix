@@ -11,5 +11,6 @@
         libvterm
         libtool
         python3
+        python312Packages.grip
     ];
 }
