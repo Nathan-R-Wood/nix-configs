@@ -1,6 +1,6 @@
 format = """
 [ ](#FFFFFF)\
-[> ](bold green)\
+[ ](bold green)\
 $username[@](#9a348e)$hostname\
 $directory\
 $git_branch(#FCA17D)\
