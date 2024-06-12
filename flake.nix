@@ -28,7 +28,7 @@
                 modules = [
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
-                        home-manager.users.allthebeans = import ./Modules/Gui/home.nix;
+                        home-manager.users.allthebeans = import ./Modules/home.nix;
                     }
                     ./Modules/allow-unfree.nix
                     ./Systems/Gaming-Desktop/configuration.nix
@@ -58,7 +58,7 @@
                 modules = [
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
-                        home-manager.users.allthebeans = import ./Modules/Gui/home.nix;
+                        home-manager.users.allthebeans = import ./Modules/home.nix;
                     }
                     ./Modules/Gui/emacs.nix
                     ./Modules/Gui/fonts.nix
@@ -75,6 +75,10 @@
             Radahn = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
+                    home-manager.nixosModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.users.allthebeans = import ./Modules/home.nix;
+                    }
                     ./Systems/Radahn/configuration.nix
                     ./Modules/utilities.nix
                     ./Modules/Users/allthebeans.nix
@@ -86,6 +90,10 @@
             Blaidd = nixpkgs.lib.nixosSystem {
                 system =  "aarch64-linux";
                 modules = [
+                    home-manager.nixosModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.users.allthebeans = import ./Modules/home.nix;
+                    }
                     ./Systems/Raspberry/configuration.nix
                     ./Modules/utilities.nix
                     ./Modules/Users/allthebeans.nix
@@ -98,6 +106,10 @@
             Jar-bairn = nixpkgs.lib.nixosSystem {
                 system = "aarch64-linux";
                 modules = [
+                    home-manager.nixosModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.users.allthebeans = import ./Modules/home.nix;
+                    }
                     ./Systems/Raspberry2/configuration.nix
                     ./Modules/utilities.nix
                     ./Modules/Users/allthebeans.nix
