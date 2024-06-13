@@ -2,9 +2,17 @@
   home.username = "allthebeans";
   home.homeDirectory = "/home/allthebeans";
   home.stateVersion = "24.05";
-  programs.bash.enable = true;
-  home = {
-    sessionPath = [ "$HOME/.emacs.d/bin" ];
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autocd = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    history = {
+      size = 1000;
+      path = "{$config.xdg.dataHome}/.zsh_history";
+    };
+    initExtra = "path+=('$HOME/.emacs.d/bin')";
     sessionVariables = {
       DOOMDIR = "$HOME/.doom.d";
     };
