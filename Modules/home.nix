@@ -10,9 +10,9 @@
     syntaxHighlighting.enable = true;
     history = {
       size = 1000;
-      path = "{$config.xdg.dataHome}/.zsh_history";
+      path = ".zsh_history";
     };
-    initExtra = "path+=('$HOME/.emacs.d/bin')";
+    initExtra = "path+=('/home/allthebeans/.emacs.d/bin')";
     sessionVariables = {
       DOOMDIR = "$HOME/.doom.d";
     };
