@@ -15,7 +15,6 @@
     usbutils # lsusb
     btop # prettier top
     git
-    zsh
   ];
   # Lets some things get firmware updates which probably only helps.
   services.fwupd.enable = true;

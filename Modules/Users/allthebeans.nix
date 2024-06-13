@@ -1,4 +1,5 @@
 { config, pkgs, ... }: {
+prorams.zsh.enable = true;
 
 users.users.allthebeans = {
     isNormalUser = true;
