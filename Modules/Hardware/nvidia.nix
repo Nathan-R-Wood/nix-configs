@@ -4,6 +4,10 @@
   # This seems to be implied by modesetting.enable = true; but leaving it here just in case.
   # boot.kernelModules = [ "nvidia" "nvidia_uvm" "nvidia_drm" "nvidia_modeset" ];
 
+  environment.systemPackages = with pkgs-unstable; [
+    nvtopPackages.nvidia
+  ];
+
   # Kernel 6.9 and nvidia 555 have issues right now.
   boot.kernelPackages = pkgs-unstable.linuxPackages_6_8;
   services.xserver.videoDrivers = ["nvidia"]; # will install nvidia-vaapi-driver by default.
