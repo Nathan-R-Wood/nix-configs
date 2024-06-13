@@ -1,10 +1,10 @@
 format = """
-[ ](#FFFFFF)\
-[ ](bold green)\
-$username[@](#9a348e)$hostname\
+[ ](#00f5ff)\
+[ ](bold #32cd32)\
+$username[@](#8b008b)$hostname\
 $directory\
-$git_branch(#FCA17D)\
-$git_status(#FCA17D)\
+$git_branch\
+$git_status\
 $c\
 $elixir\
 $elm\
@@ -19,7 +19,7 @@ $rust\
 $scala\
 $docker_context\
 $time
-[󱞩 ](bold green)\
+[󱞩 ](bold #32cd32)\
 """
 
 # Disable the blank line at the start of the prompt
@@ -29,18 +29,18 @@ $time
 # and use the os module below
 [hostname]
 ssh_only = false
-format = "[$hostname ](#9a348e)"
+format = "[$hostname ](#8b008b)"
 disabled = false
 
 [username]
 show_always = true
-style_user = "#9A348E"
-style_root = "#9A348E"
+style_user = "#8b008b"
+style_root = "#ff0000"
 format = '[$user]($style)'
 disabled = false
 
 [directory]
-style = "#DA627D"
+style = "#ff1493"
 format = "[ /$path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -80,11 +80,11 @@ format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
 symbol = ""
-style = "#FCA17D"
+style = "#ff6347"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "#FCA17D"
+style = "#ff6347"
 format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
