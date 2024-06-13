@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
-programs.zsh.enable = true;
-
-users.users.allthebeans = {
+  programs.zsh.enable = true;
+  users.users.allthebeans = {
+    shell = pkgs.zsh;
     isNormalUser = true;
     description = "Some name or something";
     extraGroups = [ "networkmanager" "wheel" "docker"];
