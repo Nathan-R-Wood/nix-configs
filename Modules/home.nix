@@ -10,7 +10,7 @@
     syntaxHighlighting.enable = true;
     history = {
       size = 1000;
-      path = ".zsh_history";
+      path = "/home/allthebeans/.zsh_history";
     };
     initExtra = "path+=('/home/allthebeans/.emacs.d/bin')";
     sessionVariables = {
