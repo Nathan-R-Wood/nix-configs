@@ -1,6 +1,5 @@
 {
-    # Just some quirked up name because silly shit like this is most of the fun in programming
-    description = "Overlord";
+    description = "Manages all of my systems.";
 
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-24.05";
@@ -17,9 +16,11 @@
         # It also looks like some inputs might need to be made and later referenced again in the modules section for the raspberry pi to work.
         # The modules section is just a list of files that will be referenced and loaded for that systems config. I can use that to separate individual programs or groups of programs like say obs and kdenlive to only be on my main desktop and maybe the steam deck since those are the only systems that will have both a gui and the power nescesary to do video recording/editing.
         nixosConfigurations = {
+
             Tarnished = nixpkgs.lib.nixosSystem rec {
                 system = "x86_64-linux";
                 specialArgs = {
+                    inherit inputs;
                     pkgs-unstable = import nixpkgs-unstable {
                         inherit system;
                         config.allowUnfree = true;
@@ -28,22 +29,23 @@
                 modules = [
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
-                        home-manager.users.allthebeans = import ./Modules/home.nix;
+                        home-manager.users.allthebeans = import ./modules/home.nix;
                     }
-                    ./Modules/allow-unfree.nix
-                    ./Systems/Gaming-Desktop/configuration.nix
-                    ./Modules/Games/steam.nix
-                    ./Modules/Gui/general.nix
-                    ./Modules/Users/allthebeans.nix
-                    ./Modules/utilities.nix
-                    ./Modules/Hardware/nvme.nix
-                    ./Modules/Games/minecraft.nix
-                    ./Modules/Hardware/nvidia.nix
-                    ./Modules/Gui/unstable.nix
-                    ./Modules/Gui/emacs.nix
-                    ./Modules/Gui/fonts.nix
-                    ./Modules/Gui/heavy.nix
-                    ./Modules/Gui/kdepackages.nix
+                    ./modules/allow-unfree.nix
+                    ./systems/gui/tarnished/configuration.nix
+                    ./modules/games/steam.nix
+                    ./modules/games/minecraft.nix
+                    ./modules/games/packwiz.nix
+                    ./modules/users/allthebeans.nix
+                    ./modules/utilities.nix
+                    ./modules/hardware/nvme.nix
+                    ./modules/hardware/nvidia.nix
+                    ./modules/gui/general.nix
+                    ./modules/gui/unstable.nix
+                    ./modules/gui/emacs.nix
+                    ./modules/gui/fonts.nix
+                    ./modules/gui/heavy.nix
+                    ./modules/gui/kdepackages.nix
                 ];
             };
 
@@ -58,17 +60,17 @@
                 modules = [
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
-                        home-manager.users.allthebeans = import ./Modules/home.nix;
+                        home-manager.users.allthebeans = import ./modules/home.nix;
                     }
-                    ./Modules/Gui/emacs.nix
-                    ./Modules/Gui/fonts.nix
-                    ./Systems/Laptop/configuration.nix
-                    ./Modules/Gui/general.nix
-                    ./Modules/Gui/unstable.nix
-                    ./Modules/Hardware/nvme.nix
-                    ./Modules/utilities.nix
-                    ./Modules/Users/allthebeans.nix
-                    ./Modules/Gui/kdepackages.nix
+                    ./systems/gui/malenia/configuration.nix
+                    ./modules/utilities.nix
+                    ./modules/users/allthebeans.nix
+                    ./modules/hardware/nvme.nix
+                    ./modules/gui/emacs.nix
+                    ./modules/gui/fonts.nix
+                    ./modules/gui/general.nix
+                    ./modules/gui/unstable.nix
+                    ./modules/gui/kdepackages.nix
                 ];
             };
 
@@ -77,13 +79,13 @@
                 modules = [
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
-                        home-manager.users.allthebeans = import ./Modules/home.nix;
+                        home-manager.users.allthebeans = import ./modules/home.nix;
                     }
-                    ./Systems/Radahn/configuration.nix
-                    ./Modules/utilities.nix
-                    ./Modules/Users/allthebeans.nix
-                    ./Modules/Users/defin.nix
-                    ./Modules/Servers/server-utils.nix
+                    ./systems/headless/radahn/configuration.nix
+                    ./modules/utilities.nix
+                    ./modules/users/allthebeans.nix
+                    ./modules/users/defin.nix
+                    ./modules/servers/server-utils.nix
                 ];
             };
 
@@ -92,14 +94,14 @@
                 modules = [
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
-                        home-manager.users.allthebeans = import ./Modules/home.nix;
+                        home-manager.users.allthebeans = import ./modules/home.nix;
                     }
-                    ./Systems/Raspberry/configuration.nix
-                    ./Modules/utilities.nix
-                    ./Modules/Users/allthebeans.nix
-                    ./Modules/Servers/vpn-client.nix
-                    ./Modules/Servers/nfs-client.nix
-                    ./Modules/Servers/server-utils.nix
+                    ./systems/headless/blaidd/configuration.nix
+                    ./modules/utilities.nix
+                    ./modules/users/allthebeans.nix
+                    ./modules/servers/vpn-client.nix
+                    ./modules/servers/nfs-client.nix
+                    ./modules/servers/server-utils.nix
                 ];
             };
 
@@ -108,17 +110,15 @@
                 modules = [
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
-                        home-manager.users.allthebeans = import ./Modules/home.nix;
+                        home-manager.users.allthebeans = import ./modules/home.nix;
                     }
-                    ./Systems/Raspberry2/configuration.nix
-                    ./Modules/utilities.nix
-                    ./Modules/Users/allthebeans.nix
-                    ./Modules/Servers/vpn-serv.nix
-                    ./Modules/Servers/server-utils.nix
+                    ./systems/headless/jar-bairn/configuration.nix
+                    ./modules/utilities.nix
+                    ./modules/users/allthebeans.nix
+                    ./modules/servers/vpn-serv.nix
+                    ./modules/servers/server-utils.nix
                 ];
             };
-
         };
-# My text editor knows where all the magic semicolons go which is pretty pog honestly.
     };
 }
