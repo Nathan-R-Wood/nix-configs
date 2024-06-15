@@ -40,6 +40,7 @@
                     ./modules/utilities.nix
                     ./modules/hardware/nvme.nix
                     ./modules/hardware/nvidia.nix
+                    ./modules/gui/de/plasma.nix
                     ./modules/gui/general.nix
                     ./modules/gui/unstable.nix
                     ./modules/gui/emacs.nix
@@ -66,6 +67,7 @@
                     ./modules/utilities.nix
                     ./modules/users/allthebeans.nix
                     ./modules/hardware/nvme.nix
+                    ./modules/gui/de/plasma.nix
                     ./modules/gui/emacs.nix
                     ./modules/gui/fonts.nix
                     ./modules/gui/general.nix
