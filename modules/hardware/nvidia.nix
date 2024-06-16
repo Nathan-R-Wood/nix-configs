@@ -8,8 +8,7 @@
     nvtopPackages.nvidia
   ];
 
-  # Kernel 6.9 and nvidia 555 have issues right now.
-  boot.kernelPackages = pkgs-unstable.linuxPackages_6_8;
+  boot.kernelPackages = pkgs-unstable.linuxPackages_latest;
   services.xserver.videoDrivers = ["nvidia"]; # will install nvidia-vaapi-driver by default.
   hardware.nvidia-container-toolkit.enable = true;
   hardware.nvidia = {
