@@ -7,9 +7,12 @@
     ];
   networking.hostName = "Tree-sentinel"; # Define your hostname.
   networking.networkmanager.enable = true;
-  networking.firewall.enable = false;
+  networking.firewall.enable = false; 
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
   system.stateVersion = "24.05"; # Did you read the comment?
 }
