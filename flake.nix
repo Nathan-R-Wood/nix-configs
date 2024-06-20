@@ -137,6 +137,16 @@
                     ./modules/servers/server-utils.nix
                 ];
             };
+
+            Iso = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
+                    "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+                    ({pkgs, config, lib, ...}: {services.openssh.settings.PermitRootLogin = lib.mkForce "no";})
+                    ./modules/utilities.nix
+                    ./modules/users/allthebeans.nix
+                ];
+            };
         };
     };
 }
