@@ -91,6 +91,28 @@
                 ];
             };
 
+            Tree-sentinel = nixpkgs.lib.nixosSystem rec {
+                system = "x86_64-linux";
+                specialArgs = {
+                    inherit inputs;
+                    pkgs-unstable = import nixpkgs-unstable {
+                        inherit system;
+                        config.allowUnfree = true;
+                    };
+                };
+                modules = [
+                    home-manager.nixosModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.users.allthebeans = import ./modules/home.nix;
+                    }
+                    ./systems/headless/tree-sentinel/configuration.nix
+                    ./modules/utilities.nix
+                    ./modules/users/allthebeans.nix
+                    ./modules/servers/server-utils.nix
+                    ./modules/hardware/nvidia.nix
+                ];
+            };
+
             Blaidd = nixpkgs.lib.nixosSystem {
                 system =  "aarch64-linux";
                 modules = [
