@@ -8,4 +8,5 @@
     obs-studio
     oversteer
   ];
+  programs.appimage.binfmt = true;
 }
