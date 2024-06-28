@@ -40,6 +40,7 @@
                     ./modules/utilities.nix
                     ./modules/hardware/nvme.nix
                     ./modules/hardware/nvidia.nix
+                    ./modules/hardware/bluetooth.nix
                     ./modules/gui/de/plasma.nix
                     ./modules/gui/general.nix
                     ./modules/gui/unstable.nix
