@@ -44,11 +44,11 @@
         }
         { # Tarnished
           publicKey = "b2lJp6DrTbot3hDKEZnCevIf9MY97hl3An7cSv4IZFI=";
-          allowedIPs = ["10.69.69.4/32"];
+          allowedIPs = ["10.69.69.4/24"];
         }
         { # Tree-sentinel
           publicKey = "lcX6Tc6VzFhV6vY7qys5UKXyJbjtPw4267jTllPAHFI=";
-          allowedIPs = ["10.69.69.3/32"];
+          allowedIPs = ["10.69.69.3/24"];
         }
       ];
     };
