@@ -4,7 +4,7 @@
   };
   networking.wireguard.interfaces = {
     wg0 = {
-        ips = ["10.69.69.2/24"];
+        ips = ["10.69.69.0/24"];
         privateKeyFile = "/home/allthebeans/wireguard-keys/private";
         peers = [
             {

@@ -9,9 +9,17 @@
             listenPort = 51820;
             privateKeyFile = "/home/allthebeans/wireguard-keys/private";
             peers = [
-              {
-                  publicKey = "Cy3POfXjG0iJzfNEkirAOrt8TVldEo8ez5pT2KVBXyA=";
-                  allowedIPs = ["10.69.69.2/32"];
+              { # Blaidd
+                publicKey = "Cy3POfXjG0iJzfNEkirAOrt8TVldEo8ez5pT2KVBXyA=";
+                allowedIPs = ["10.69.69.2/32"];
+              }
+              { # Tree-sentinel
+                publickey = "lcX6Tc6VzFhV6vY7qys5UKXyJbjtPw4267jTllPAHFI=";
+                allowedIPs = ["10.69.69.3/32"];
+              }
+              { # Tarnished
+                publickey = "b2lJp6DrTbot3hDKEZnCevIf9MY97hl3An7cSv4IZFI=";
+                allowrdIPs = ["10.69.69.4/32"];
               }
             ];
       };

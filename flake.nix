@@ -49,6 +49,7 @@
                     ./modules/gui/heavy.nix
                     ./modules/gui/kdepackages.nix
                     ./modules/virt/qemu.nix
+                    ./modules/servers/vpn-client.nix
                 ];
             };
 
@@ -106,6 +107,7 @@
                     ./modules/servers/server-utils.nix
                     ./modules/allow-unfree.nix
                     ./modules/hardware/nvidia-old.nix
+                    ./modules/servers/vpn-client.nix
                 ];
             };
 
