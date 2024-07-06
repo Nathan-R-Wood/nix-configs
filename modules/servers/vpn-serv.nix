@@ -19,7 +19,7 @@
               }
               { # Tarnished
                 publicKey = "b2lJp6DrTbot3hDKEZnCevIf9MY97hl3An7cSv4IZFI=";
-                allowrdIPs = ["10.69.69.4/32"];
+                allowedIPs = ["10.69.69.4/32"];
               }
             ];
       };
