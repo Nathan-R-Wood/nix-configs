@@ -37,11 +37,11 @@ imports =
         }
         { # Blaidd
           publicKey = "Cy3POfXjG0iJzfNEkirAOrt8TVldEo8ez5pT2KVBXyA=";
-          allowedIPs = ["10.69.69.2/24"];
+          allowedIPs = ["10.69.69.0/24"];
         }
         { # Tree-sentinel
           publicKey = "lcX6Tc6VzFhV6vY7qys5UKXyJbjtPw4267jTllPAHFI=";
-          allowedIPs = ["10.69.69.3/24"];
+          allowedIPs = ["10.69.69.0/24"];
         }
       ];
     };
