@@ -29,11 +29,19 @@ imports =
       ips = ["10.69.69.4/24"];
       privateKeyFile = "/home/allthebeans/wireguard-keys/private";
       peers = [
-        {
+        { # Jar-bairn
           publicKey = "TjecTK50P+xmhXxqB1H/FUbIYVbSyV+WI2ug+7iWhWw=";
           allowedIPs = ["10.69.69.0/24"];
           endpoint = "192.168.0.24:51820";
           persistentKeepalive = 25;
+        }
+        { # Blaidd
+          publicKey = "Cy3POfXjG0iJzfNEkirAOrt8TVldEo8ez5pT2KVBXyA=";
+          allowedIPs = ["10.69.69.2/32"];
+        }
+        { # Tree-sentinel
+          publicKey = "lcX6Tc6VzFhV6vY7qys5UKXyJbjtPw4267jTllPAHFI=";
+          allowedIPs = ["10.69.69.3/32"];
         }
       ];
     };
