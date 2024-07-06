@@ -26,10 +26,12 @@
         { # Tarnished
           publicKey = "b2lJp6DrTbot3hDKEZnCevIf9MY97hl3An7cSv4IZFI=";
           allowedIPs = ["10.69.69.0/24"];
+          endpoint = "192.168.0.81:51820";
         }
         { # Blaidd
           publicKey = "Cy3POfXjG0iJzfNEkirAOrt8TVldEo8ez5pT2KVBXyA=";
           allowedIPs = ["10.69.69.0/24"];
+          endpoint = "192.168.0.133:51820";
         }
       ];
     };
