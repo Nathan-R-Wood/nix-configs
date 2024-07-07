@@ -21,35 +21,6 @@ imports =
   # Enable networking
   networking.networkmanager.enable = true;
 
-  networking.firewall = {
-    allowedUDPPorts = [ 51820 ];
-  };
-  networking.wireguard.interfaces = {
-    wg0 = {
-      ips = ["10.69.69.4/24"];
-      listenPort = 51820;
-      privateKeyFile = "/home/allthebeans/wireguard-keys/private";
-      peers = [
-        { # Jar-bairn
-          publicKey = "TjecTK50P+xmhXxqB1H/FUbIYVbSyV+WI2ug+7iWhWw=";
-          allowedIPs = ["10.69.69.0/24"];
-          endpoint = "192.168.0.24:51820";
-          persistentKeepalive = 25;
-        }
-        { # Blaidd
-          publicKey = "Cy3POfXjG0iJzfNEkirAOrt8TVldEo8ez5pT2KVBXyA=";
-          allowedIPs = ["10.69.69.0/24"];
-          endpoint = "192.168.0.133:51820";
-        }
-        { # Tree-sentinel
-          publicKey = "lcX6Tc6VzFhV6vY7qys5UKXyJbjtPw4267jTllPAHFI=";
-          allowedIPs = ["10.69.69.0/24"];
-          endpoint = "192.168.0.22:51820";
-        }
-      ];
-    };
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 

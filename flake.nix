@@ -121,6 +121,7 @@
                     ./modules/users/allthebeans.nix
                     ./modules/servers/nfs-client.nix
                     ./modules/servers/server-utils.nix
+                    ./modules/servers/vpn-client.nix
                 ];
             };
 
