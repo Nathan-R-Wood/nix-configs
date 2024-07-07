@@ -27,6 +27,7 @@ imports =
   networking.wireguard.interfaces = {
     wg0 = {
       ips = ["10.69.69.4/24"];
+      listenPort = 51820;
       privateKeyFile = "/home/allthebeans/wireguard-keys/private";
       peers = [
         { # Jar-bairn
