@@ -7,11 +7,8 @@
     networking.firewall = {
         enable = true;
         allowedTCPPorts = [ 27040 ]; # Local game transfer
-        #allowedUDPPortRanges = [
-         #   { from = 27031; to = 27036; } # Local game transfer
-        #];
         allowedUDPPortRanges = [
-            { from = 0; to = 65535; }
+            { from = 27031; to = 27036; } # Local game transfer
         ];
     };
 }
