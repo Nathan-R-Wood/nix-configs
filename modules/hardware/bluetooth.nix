@@ -3,8 +3,10 @@
     enable = true;
     settings = {
       General = {
-        Enable = "Source,Sink,Media,Socket";
-        ControllerMode = "bredr";
+        ControllerMode = "dual";
+      };
+      Policy = {
+        AutoEnable = "true";
       };
     };
   };
