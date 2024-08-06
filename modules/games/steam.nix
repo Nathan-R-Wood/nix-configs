@@ -11,4 +11,7 @@
             { from = 27031; to = 27036; } # Local game transfer
         ];
     };
+    environment.systemPackages = with pkgs; [
+        protonup-qt
+    ];
 }
