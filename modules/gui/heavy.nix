@@ -7,6 +7,7 @@
     gimp
     obs-studio
     oversteer
+    krita
   ];
   programs.appimage.binfmt = true;
 }

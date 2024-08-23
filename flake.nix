@@ -4,6 +4,7 @@
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-24.05";
         nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs-master.url = "github:nixos/nixpkgs/master";
         home-manager.url = "github:nix-community/home-manager/release-24.05";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -22,6 +23,10 @@
                 specialArgs = {
                     inherit inputs;
                     pkgs-unstable = import nixpkgs-unstable {
+                        inherit system;
+                        config.allowUnfree = true;
+                    };
+                    pkgs-master = import nixpkgs-master {
                         inherit system;
                         config.allowUnfree = true;
                     };
@@ -48,7 +53,6 @@
                     ./modules/gui/fonts.nix
                     ./modules/gui/heavy.nix
                     ./modules/gui/kdepackages.nix
-                    ./modules/virt/qemu.nix
                 ];
             };
 
