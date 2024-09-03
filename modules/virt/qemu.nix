@@ -4,12 +4,13 @@
    ];
 
    # For podman multiarch builds
-   boot.binfmt.registrations = lib.genAttrs ["aarch64-linux" "armv7l-linux" "riscv64-linux"] (sys: {
-      interpreter = "${pkgs-master.pkgsStatic.qemu-user}/bin/qemu-${(lib.systems.elaborate sys).qemuArch}";
+   boot.binfmt.emulatedSystems = ["aarch64-linux"];
+   boot.binfmt.registrations.aarch64-linux = {
+      interpreter = "${pkgs-master.pkgsStatic.qemu-user}/bin/qemu-aarch64";
       wrapInterpreterInShell = false;
-      preserveArgvZero = true;
-      matchCredentials = true;
       fixBinary = true;
       openBinary = true;
-});
+      matchCredentials = true;
+      preserveArgvZero = true;
+   };
 }

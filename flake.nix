@@ -53,6 +53,7 @@
                     ./modules/gui/fonts.nix
                     ./modules/gui/heavy.nix
                     ./modules/gui/kdepackages.nix
+                    ./modules/virt/qemu.nix
                 ];
             };
 
