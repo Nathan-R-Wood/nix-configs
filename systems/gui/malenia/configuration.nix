@@ -30,15 +30,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.allthebeans = {
-    isNormalUser = true;
-    description = "Some name or something";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
-    packages = with pkgs; [
-    ];
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

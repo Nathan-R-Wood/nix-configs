@@ -24,11 +24,10 @@
 
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     # if hardware.opengl.driSupport is enabled, mesa is installed and provides Vulkan for supported hardware.
-    driSupport = true;
     # needed by nvidia-docker and also steam
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 }

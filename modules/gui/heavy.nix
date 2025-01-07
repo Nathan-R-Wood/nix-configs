@@ -6,7 +6,6 @@
     godot_4
     gimp
     obs-studio
-    oversteer
     krita
   ];
   programs.appimage.binfmt = true;

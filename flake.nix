@@ -92,7 +92,7 @@
                     }
                     ./systems/headless/radahn/configuration.nix
                     ./modules/utilities.nix
-                    ./modules/users/allthebeans.nix
+                    ./modules/users/allthebeans-serv.nix
                     ./modules/users/defin.nix
                     ./modules/servers/server-utils.nix
                 ];
@@ -107,7 +107,7 @@
                     }
                     ./systems/headless/tree-sentinel/configuration.nix
                     ./modules/utilities.nix
-                    ./modules/users/allthebeans.nix
+                    ./modules/users/allthebeans-serv.nix
                     ./modules/servers/server-utils.nix
                     ./modules/allow-unfree.nix
                     ./modules/hardware/nvidia-old.nix
@@ -123,7 +123,7 @@
                     }
                     ./systems/headless/blaidd/configuration.nix
                     ./modules/utilities.nix
-                    ./modules/users/allthebeans.nix
+                    ./modules/users/allthebeans-serv.nix
                     ./modules/servers/nfs-client.nix
                     ./modules/servers/server-utils.nix
                     ./modules/servers/vpn-client.nix
@@ -139,7 +139,7 @@
                     }
                     ./systems/headless/jar-bairn/configuration.nix
                     ./modules/utilities.nix
-                    ./modules/users/allthebeans.nix
+                    ./modules/users/allthebeans-serv.nix
                     ./modules/servers/vpn-serv.nix
                     ./modules/servers/server-utils.nix
                 ];
@@ -151,7 +151,7 @@
                     "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
                     ({pkgs, config, lib, ...}: {services.openssh.settings.PermitRootLogin = lib.mkForce "no";})
                     ./modules/utilities.nix
-                    ./modules/users/allthebeans.nix
+                    ./modules/users/allthebeans-serv.nix
                 ];
             };
         };
