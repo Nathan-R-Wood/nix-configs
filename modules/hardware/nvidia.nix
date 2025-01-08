@@ -8,7 +8,7 @@
     nvtopPackages.nvidia
   ];
 
-  boot.kernelPackages = pkgs-unstable.linuxPackages;
+  boot.kernelPackages = pkgs-unstable.linuxPackages_latest;
   services.xserver.videoDrivers = ["nvidia"]; # will install nvidia-vaapi-driver by default.
   hardware.nvidia-container-toolkit.enable = true;
   hardware.nvidia = {
@@ -21,7 +21,6 @@
     open = true;
     nvidiaSettings = true;
     powerManagement.enable = true;
-
   };
 
   hardware.graphics = {
