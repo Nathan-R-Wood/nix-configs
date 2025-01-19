@@ -5,7 +5,6 @@
         brave
         element-desktop
         discord
-        audacious
         signal-desktop
         rpiboot
         rpi-imager

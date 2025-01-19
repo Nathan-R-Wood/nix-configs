@@ -12,7 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" "btusb" "btintel" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [
-    #universal-pidff
+   # universal-pidff
   ];
 
   fileSystems."/" =

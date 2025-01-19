@@ -5,6 +5,7 @@
     kcalc
     polkit-kde-agent-1
     kdeconnect-kde
+    partitionmanager
   ];
   networking.firewall = {
     enable = true;

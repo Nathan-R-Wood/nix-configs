@@ -49,6 +49,7 @@
                     ./modules/gui/de/plasma.nix
                     ./modules/gui/general.nix
                     ./modules/gui/unstable.nix
+                    ./modules/gui/heavy-unstable.nix
                     ./modules/gui/emacs.nix
                     ./modules/gui/fonts.nix
                     ./modules/gui/heavy.nix
