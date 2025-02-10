@@ -7,6 +7,10 @@
     gimp
     obs-studio
     krita
+    blender
+    android-udev-rules
+    android-tools
   ];
   programs.appimage.binfmt = true;
+  programs.adb.enable = true;
 }
