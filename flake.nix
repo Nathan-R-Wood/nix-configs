@@ -97,7 +97,6 @@
                     ./modules/users/allthebeans-serv.nix
                     ./modules/users/defin.nix
                     ./modules/servers/server-utils.nix
-                    ./moduels/servers/vault.nix
                 ];
             };
 
@@ -114,7 +113,6 @@
                     ./modules/servers/server-utils.nix
                     ./modules/allow-unfree.nix
                     ./modules/hardware/nvidia-old.nix
-                    ./modules/servers/vault.nix
                 ];
             };
 
@@ -131,7 +129,6 @@
                     ./modules/servers/nfs-client.nix
                     ./modules/servers/server-utils.nix
                     ./modules/servers/vpn-client.nix
-                    ./modules/servers/vault.nix
                 ];
             };
 
@@ -147,7 +144,6 @@
                     ./modules/users/allthebeans-serv.nix
                     ./modules/servers/vpn-serv.nix
                     ./modules/servers/server-utils.nix
-                    ./modules/servers/vault.nix
                 ];
             };
 
