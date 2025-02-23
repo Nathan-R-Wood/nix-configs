@@ -56,6 +56,7 @@
                     ./modules/gui/kdepackages.nix
                     ./modules/virt/qemu.nix
                     ./modules/servers/vault.nix
+                    ./modules/servers/container-storage.nix
                 ];
             };
 
@@ -82,6 +83,7 @@
                     ./modules/gui/general.nix
                     ./modules/gui/unstable.nix
                     ./modules/gui/kdepackages.nix
+                    ./modules/servers/vault.nix
                 ];
             };
 
@@ -97,6 +99,7 @@
                     ./modules/users/allthebeans-serv.nix
                     ./modules/users/defin.nix
                     ./modules/servers/server-utils.nix
+                    ./modules/servers/container-storage.nix
                 ];
             };
 
@@ -113,6 +116,7 @@
                     ./modules/servers/server-utils.nix
                     ./modules/allow-unfree.nix
                     ./modules/hardware/nvidia-old.nix
+                    ./modules/servers/container-storage.nix
                 ];
             };
 
@@ -129,6 +133,7 @@
                     ./modules/servers/nfs-client.nix
                     ./modules/servers/server-utils.nix
                     ./modules/servers/vpn-client.nix
+                    ./modules/servers/container-storage.nix
                 ];
             };
 
@@ -144,6 +149,7 @@
                     ./modules/users/allthebeans-serv.nix
                     ./modules/servers/vpn-serv.nix
                     ./modules/servers/server-utils.nix
+                    ./modules/servers/container-storage.nix
                 ];
             };
 
