@@ -16,7 +16,7 @@
     automountConfig = {
       TimeoutIdleSec = "600";
     };
-    where = "/mnt/Vault";
+    where = "/mnt/Containers";
   }];
 
 }
