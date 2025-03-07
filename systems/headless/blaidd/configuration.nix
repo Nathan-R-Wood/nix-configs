@@ -18,6 +18,11 @@
     };
   };
 
+ environment.systemPackages = with pkgs; [
+    libraspberrypi
+    raspberrypi-eeprom
+  ];
+
   networking.hostName = "Blaidd"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

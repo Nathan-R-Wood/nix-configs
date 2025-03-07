@@ -153,10 +153,41 @@
                 ];
             };
 
+            Container-orchestrator = nixpkgs.lib.nixosSystem rec {
+                system = "aarch64-linux";
+                specialArgs = {
+                    pkgs-unstable = import nixpkgs-unstable {
+                        inherit system;
+                        config.allowUnfree = false;
+                    };
+                };
+                modules = [
+                    home-manager.nixosModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.users.allthebeans = import ./modules/home.nix;
+                    }
+                    ./systems/headless/container-orchestrator/configuration.nix
+                    ./modules/utilities.nix
+                    ./modules/users/allthebeans-serv.nix
+                    ./modules/servers/server-utils.nix
+                    ./modules/servers/container-storage.nix
+                ];
+            };
+
             Iso = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
                     "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+                    ({pkgs, config, lib, ...}: {services.openssh.settings.PermitRootLogin = lib.mkForce "no";})
+                    ./modules/utilities.nix
+                    ./modules/users/allthebeans-serv.nix
+                ];
+            };
+
+            Arm-iso = nixpkgs.lib.nixosSystem {
+                system = "aarch64-linux";
+                modules = [
+                    "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-installer.nix"
                     ({pkgs, config, lib, ...}: {services.openssh.settings.PermitRootLogin = lib.mkForce "no";})
                     ./modules/utilities.nix
                     ./modules/users/allthebeans-serv.nix
