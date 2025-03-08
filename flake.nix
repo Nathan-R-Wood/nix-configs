@@ -187,7 +187,7 @@
             Arm-iso = nixpkgs.lib.nixosSystem {
                 system = "aarch64-linux";
                 modules = [
-                    "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-installer.nix"
+                    "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-raspberrypi.nix"
                     ({pkgs, config, lib, ...}: {services.openssh.settings.PermitRootLogin = lib.mkForce "no";})
                     ./modules/utilities.nix
                     ./modules/users/allthebeans-serv.nix
