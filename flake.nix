@@ -1,12 +1,21 @@
 {
     description = "Manages all of my systems.";
 
+    nixConfig = {
+        trusted-users = ["allthebeans"];
+        always-allow-substitutes = "true";
+        extra-substituters = ["https://nix-community.cachix.org"];
+        extra-trusted-public-keys = ["nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="];
+    };
+
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-24.11";
         nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs-master.url = "github:nixos/nixpkgs/master";
         home-manager.url = "github:nix-community/home-manager/release-24.11";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
+        raspberry-pi-nix.url = "github:nix-community/raspberry-pi-nix";
+        raspberry-pi-nix.inputs.nixpkgs.follows = "nixpkgs";
     };
 
    # If you yourself aren't part of what contributes to the output is this even reality?
@@ -155,17 +164,13 @@
 
             Container-orchestrator = nixpkgs.lib.nixosSystem rec {
                 system = "aarch64-linux";
-                specialArgs = {
-                    pkgs-unstable = import nixpkgs-unstable {
-                        inherit system;
-                        config.allowUnfree = false;
-                    };
-                };
                 modules = [
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
                         home-manager.users.allthebeans = import ./modules/home.nix;
                     }
+                    raspberry-pi-nix.nixosModules.raspberry-pi
+                    raspberry-pi-nix.nixosModules.sd-image
                     ./systems/headless/container-orchestrator/configuration.nix
                     ./modules/utilities.nix
                     ./modules/users/allthebeans-serv.nix
@@ -178,16 +183,6 @@
                 system = "x86_64-linux";
                 modules = [
                     "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-                    ({pkgs, config, lib, ...}: {services.openssh.settings.PermitRootLogin = lib.mkForce "no";})
-                    ./modules/utilities.nix
-                    ./modules/users/allthebeans-serv.nix
-                ];
-            };
-
-            Arm-iso = nixpkgs.lib.nixosSystem {
-                system = "aarch64-linux";
-                modules = [
-                    "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-raspberrypi.nix"
                     ({pkgs, config, lib, ...}: {services.openssh.settings.PermitRootLogin = lib.mkForce "no";})
                     ./modules/utilities.nix
                     ./modules/users/allthebeans-serv.nix
