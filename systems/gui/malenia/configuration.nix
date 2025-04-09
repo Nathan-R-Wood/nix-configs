@@ -31,6 +31,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+  services.power-profiles-daemon.enable = true;
+
   networking.firewall.enable = true;
 
   # This value determines the NixOS release from which the default
