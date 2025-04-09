@@ -1,13 +1,6 @@
 {
     description = "Manages all of my systems.";
 
-    nixConfig = {
-        trusted-users = ["allthebeans"];
-        always-allow-substitutes = "true";
-        extra-substituters = ["https://nix-community.cachix.org"];
-        extra-trusted-public-keys = ["nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="];
-    };
-
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-24.11";
         nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -76,23 +69,31 @@
                         inherit system;
                         config.allowUnfree = true;
                     };
+                    pkgs-master = import nixpkgs-master {
+                        inherit system;
+                        config.allowUnfree = true;
+                    };
                 };
                 modules = [
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
                         home-manager.users.allthebeans = import ./modules/home.nix;
                     }
+                    ./modules/allow-unfree.nix
                     ./systems/gui/malenia/configuration.nix
                     ./modules/utilities.nix
                     ./modules/users/allthebeans.nix
                     ./modules/hardware/nvme.nix
+                    ./modules/hardware/bluetooth.nix
                     ./modules/gui/de/plasma.nix
                     ./modules/gui/emacs.nix
                     ./modules/gui/fonts.nix
                     ./modules/gui/general.nix
                     ./modules/gui/unstable.nix
                     ./modules/gui/kdepackages.nix
+                    ./modules/virt/qemu.nix
                     ./modules/servers/vault.nix
+                    ./modules/servers/container-storage.nix
                 ];
             };
 

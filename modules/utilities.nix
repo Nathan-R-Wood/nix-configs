@@ -33,6 +33,10 @@
     # Changed from the default port of 22 so gitlab can use 22
     ports = [24];
   };
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   services.tailscale.enable = true;
 
