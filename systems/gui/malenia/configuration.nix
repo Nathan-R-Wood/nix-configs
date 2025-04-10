@@ -13,7 +13,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs-unstable.linuxPackages_zen;
+  boot.kernelPackages = pkgs-unstable.linuxPackages_latest;
 
   networking.hostName = "Malenia"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -32,6 +32,7 @@
   services.libinput.enable = true;
 
   services.power-profiles-daemon.enable = true;
+  services.fprintd.enable = true;
 
   networking.firewall.enable = true;
 
