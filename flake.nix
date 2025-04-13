@@ -56,6 +56,8 @@
                     ./modules/gui/fonts.nix
                     ./modules/gui/heavy.nix
                     ./modules/gui/kdepackages.nix
+                    ./modules/dev/micro-controller.nix
+                    ./modules/dev/sbc.nix
                     ./modules/virt/qemu.nix
                     ./modules/servers/vault.nix
                     ./modules/servers/container-storage.nix
@@ -91,6 +93,7 @@
                     ./modules/gui/general.nix
                     ./modules/gui/unstable.nix
                     ./modules/gui/kdepackages.nix
+                    ./modules/dev/micro-controller.nix
                     ./modules/virt/qemu.nix
                     ./modules/servers/vault.nix
                     ./modules/servers/container-storage.nix

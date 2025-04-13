@@ -12,5 +12,6 @@
         libtool
         python3
         python312Packages.grip
+        python312Packages.pip
     ];
 }
