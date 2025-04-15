@@ -7,7 +7,7 @@
         clang
         cmake
         gnumake
-        gcc
+        gcc14
         libvterm
         libtool
         python3
