@@ -85,6 +85,9 @@
                     ./systems/gui/malenia/configuration.nix
                     ./modules/utilities.nix
                     ./modules/users/allthebeans.nix
+                    ./modules/games/steam.nix
+                    ./modules/games/minecraft.nix
+                    ./modules/games/packwiz.nix
                     ./modules/hardware/nvme.nix
                     ./modules/hardware/bluetooth.nix
                     ./modules/gui/de/plasma.nix
