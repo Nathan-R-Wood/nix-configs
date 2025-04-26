@@ -25,7 +25,6 @@
 
   hardware.graphics = {
     enable = true;
-    services.xserver.videoDrivers = ["nvidia"]; # needed by nvidia-docker and also steam
     enable32Bit = true;
   };
 }
