@@ -36,6 +36,10 @@
 
   networking.firewall.enable = true;
 
+  environment.systemPackages = with pkgs; [
+   nvtopPackages.amd
+  ];
+
   services.xserver.videoDrivers = ["amdgpu"];
   hardware.graphics = {
     enable = true;
