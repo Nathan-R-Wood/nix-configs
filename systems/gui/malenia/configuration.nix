@@ -43,6 +43,7 @@
   services.xserver.videoDrivers = ["amdgpu"];
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
   };
 
   # This value determines the NixOS release from which the default
