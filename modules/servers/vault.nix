@@ -13,10 +13,9 @@
 
   systemd.automounts = [{
     wantedBy = [ "multi-user.target" ];
-    requires = [ "network-online.target" ];
+    requires = [ "tailscale.service" ];
     automountConfig = {
       TimeoutIdleSec = "600";
-      _netdev = true;
     };
     where = "/mnt/Vault";
   }];
