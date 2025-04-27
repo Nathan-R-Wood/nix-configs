@@ -16,6 +16,7 @@
     requires = [ "network-online.target" ];
     automountConfig = {
       TimeoutIdleSec = "600";
+      _netdev = true;
     };
     where = "/mnt/Containers";
   }];
