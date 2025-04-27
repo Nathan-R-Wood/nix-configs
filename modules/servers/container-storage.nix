@@ -13,6 +13,7 @@
 
   systemd.automounts = [{
     wantedBy = [ "multi-user.target" ];
+    requires = [ "network-online.target" ];
     automountConfig = {
       TimeoutIdleSec = "600";
     };
