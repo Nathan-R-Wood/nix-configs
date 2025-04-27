@@ -16,7 +16,7 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/a52bd6b7-bb4c-4106-963d-aabaa8e4d38d";
       fsType = "ext4";
-      options = ["noatime" "ssd" "defaults"];
+      options = ["noatime" "defaults"];
     };
 
   fileSystems."/boot" =
