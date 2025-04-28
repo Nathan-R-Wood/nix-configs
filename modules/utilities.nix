@@ -19,6 +19,7 @@
     nfs-utils
     dive
     podman-tui
+    nvd
   ];
   # Lets some things get firmware updates which probably only helps.
   services.fwupd.enable = true;
