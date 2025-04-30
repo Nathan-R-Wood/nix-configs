@@ -5,7 +5,7 @@
   systemd.mounts = [{
     type = "nfs";
     mountConfig = {
-      Options = [ "noatime" "soft" ];
+      Options = [ "noatime" "soft" "_netdev" ];
     };
     what = "great-jar.tailcbbdd7.ts.net:/Containers";
     where = "/mnt/Containers";
