@@ -5,6 +5,8 @@
 
   systemd.mounts = [{
     type = "nfs";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "tailscaled.service" ];
     mountConfig = {
       Options = [ "noatime" "soft" "_netdev" "x-systemd.idle-timeout=300" "x.systemd.automount" "noauto" ];
     };
