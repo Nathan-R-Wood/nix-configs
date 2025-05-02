@@ -13,7 +13,7 @@
 
   systemd.automounts = [{
     wantedBy = [ "multi-user.target" ];
-    requires = [ "network-online.target" "tailscaled.service" "remote-fs.target" ];
+    after = [ "network-online.target" "tailscaled.service" "remote-fs.target" ];
     automountConfig = {
       TimeoutIdleSec = "600";
     };
