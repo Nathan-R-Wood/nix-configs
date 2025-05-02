@@ -1,22 +1,14 @@
 { config, pkgs, ... }: {
 
+  boot.supportedFilesystems = [ "nfs" ];
   services.rpcbind.enable = true;
 
   systemd.mounts = [{
     type = "nfs";
     mountConfig = {
-      Options = [ "noatime" "soft" "_netdev" ];
+      Options = [ "noatime" "soft" "_netdev" "x-systemd.idle-timeout=300" "x.systemd.automount" "noauto" ];
     };
     what = "great-jar.tailcbbdd7.ts.net:/Vault";
-    where = "/mnt/Vault";
-  }];
-
-  systemd.automounts = [{
-    wantedBy = [ "multi-user.target" ];
-    after = [ "tailscaled.service" ];
-    automountConfig = {
-      TimeoutIdleSec = "600";
-    };
     where = "/mnt/Vault";
   }];
 
