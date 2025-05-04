@@ -97,6 +97,7 @@
                     ./modules/gui/unstable.nix
                     ./modules/gui/kdepackages.nix
                     ./modules/dev/micro-controller.nix
+		    ./modules/dev/networking.nix
                     ./modules/virt/qemu.nix
                     ./modules/servers/vault.nix
                     ./modules/servers/container-storage.nix
