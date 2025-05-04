@@ -11,6 +11,8 @@
     dockerSocket.enable = true;
     defaultNetwork.settings.dns_enabled = true;
   };
+  users.groups.podman.members = [ "allthebeans" ];
+
   environment.systemPackages = with pkgs; [
     pciutils # lspci
     usbutils # lsusb

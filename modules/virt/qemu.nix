@@ -13,4 +13,5 @@
       matchCredentials = true;
       preserveArgvZero = true;
    };
+   users.groups.Kvm.members = [ "allthebeans" ];
 }

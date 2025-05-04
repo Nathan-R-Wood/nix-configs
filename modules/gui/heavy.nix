@@ -11,6 +11,9 @@
     android-udev-rules
     android-tools
   ];
+
+  users.groups.adbusers.members = [ "allthebeans" ]; #for android tools
+
   programs.appimage.binfmt = true;
   programs.adb.enable = true;
 }
