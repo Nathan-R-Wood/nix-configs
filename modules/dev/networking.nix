@@ -7,5 +7,6 @@
 	vpcs
 	libvirt
 	mtools
+	wireshark
     ];
 }
