@@ -10,4 +10,11 @@
     wireshark
   ];
   users.groups.wireshark.members = [ "allthebeans" ];
+
+  services.gns3-server = {
+    vpcs.enable = true;
+    dynamips.enable = true;
+    ubridge.enable = true;
+  };
+
 }
