@@ -4,14 +4,10 @@
    ];
 
    # For podman multiarch builds
-   boot.binfmt.emulatedSystems = ["aarch64-linux"];
-   boot.binfmt.registrations.aarch64-linux = {
-      interpreter = "${pkgs-unstable.pkgsStatic.qemu-user}/bin/qemu-aarch64";
-      wrapInterpreterInShell = false;
-      fixBinary = true;
-      openBinary = true;
-      matchCredentials = true;
-      preserveArgvZero = true;
+   boot.binfmt = {
+      emulatedSystems = [ "aarch64-linux" ];
+      preferStaticEmulators = true;
    };
-   users.groups.Kvm.members = [ "allthebeans" ];
+
+   users.groups.kvm.members = [ "allthebeans" ];
 }
