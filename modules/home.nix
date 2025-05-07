@@ -8,6 +8,10 @@
     autocd = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    shellAliases = {
+      dive = "dive --source podman ";
+      nix-generations = "cd /nix/var/nix/profiles/ && ls ";
+    };
     history = {
       size = 1000;
       path = "/home/allthebeans/.zsh_history";
