@@ -24,7 +24,9 @@
     podman-tui
     nvd
     util-linux
+    kubernetes
   ];
+
   # Lets some things get firmware updates which probably only helps.
   services.fwupd.enable = true;
   #fixes some program compatibiility and doesn't seem to hurt anything.
