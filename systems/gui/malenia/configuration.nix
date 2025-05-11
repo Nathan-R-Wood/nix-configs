@@ -34,7 +34,11 @@
   services.power-profiles-daemon.enable = true;
   services.fprintd.enable = true;
 
-  networking.firewall.enable = true;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 25565 ];
+    allowedUDPPorts = [ 25565 ];
+  };
 
   environment.systemPackages = with pkgs; [
    nvtopPackages.amd
