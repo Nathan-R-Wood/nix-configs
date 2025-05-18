@@ -16,7 +16,7 @@
       size = 1000;
       path = "/home/allthebeans/.zsh_history";
     };
-    initExtra = "path+=('/home/allthebeans/.emacs.d/bin')";
+    initContent = "path+=('/home/allthebeans/.emacs.d/bin')";
     sessionVariables = {
       DOOMDIR = "$HOME/.doom.d";
     };
