@@ -2,7 +2,7 @@
     description = "Manages all of my systems.";
 
     inputs = {
-        nixpkgs.url = "nixpkgs/nixos-24.11";
+        nixpkgs.url = "nixpkgs/nixos-25.05";
         nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs-master.url = "github:nixos/nixpkgs/master";
         home-manager.url = "github:nix-community/home-manager/release-24.11";
