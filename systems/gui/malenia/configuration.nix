@@ -42,6 +42,8 @@
 
   environment.systemPackages = with pkgs; [
    nvtopPackages.amd
+   framework-tool
+   kdePackages.frameworkintegration
   ];
 
   services.xserver.videoDrivers = ["amdgpu"];
@@ -49,6 +51,8 @@
     enable = true;
     enable32Bit = true;
   };
+
+  hardware.sensor.iio.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
