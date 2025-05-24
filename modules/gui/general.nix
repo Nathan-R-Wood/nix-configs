@@ -6,6 +6,8 @@
         element-desktop
         discord
         signal-desktop
+        wayland-utils
+        hardinfo2
     ];
     # Configure keymap in X11 xWayland also requires this atleast from what i can find.
     services.xserver = {

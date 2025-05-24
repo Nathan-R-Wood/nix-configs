@@ -84,6 +84,7 @@
                     }
                     "${nix-hardware}/framework/kmod.nix"
                     "${nix-hardware}/framework/13-inch/common/audio.nix"
+                    "${nix-hardware}/framework/bluetooth.nix"
                     ./modules/allow-unfree.nix
                     ./systems/gui/malenia/configuration.nix
                     ./modules/utilities.nix

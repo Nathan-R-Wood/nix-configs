@@ -32,7 +32,7 @@
   services.libinput.enable = true;
 
   services.power-profiles-daemon.enable = true;
-  services.fprintd.enable = true;
+  services.fprintd.enable = true; #enables the fingerprint reader
 
   networking.firewall = {
     enable = true;
