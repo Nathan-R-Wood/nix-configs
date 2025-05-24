@@ -44,9 +44,10 @@
    nvtopPackages.amd
    framework-tool
    kdePackages.frameworkintegration
+   libinput
   ];
 
-  services.xserver.videoDrivers = ["modesetting"];
+  services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
