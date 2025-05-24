@@ -46,7 +46,7 @@
    kdePackages.frameworkintegration
   ];
 
-  services.xserver.videoDrivers = ["amdgpu"];
+  services.xserver.videoDrivers = ["modesetting"];
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
