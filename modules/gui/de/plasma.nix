@@ -7,4 +7,10 @@
   services.desktopManager.plasma6.enable = true;
   # Hint to Electron that it's running under wayland.
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.systemPackages = with pkgs.kdePackages; [
+    yakuake
+    kate
+    kcalc
+    polkit-kde-agent-1
+  ];
 }

@@ -1,9 +1,5 @@
 { config, pkgs, ... }: {
   environment.systemPackages = with pkgs.kdePackages; [
-    yakuake
-    kate
-    kcalc
-    polkit-kde-agent-1
     kdeconnect-kde
     partitionmanager
   ];
