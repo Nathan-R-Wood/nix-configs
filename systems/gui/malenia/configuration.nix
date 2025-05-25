@@ -43,7 +43,6 @@
   environment.systemPackages = with pkgs; [
    nvtopPackages.amd
    framework-tool
-   kdePackages.frameworkintegration
    libinput
   ];
 
