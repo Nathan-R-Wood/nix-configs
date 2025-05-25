@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, pkgs-unstable,lib,  ... }:
 
 {
   imports =
@@ -52,6 +52,8 @@
     enable = true;
     enable32Bit = true;
   };
+
+  console.earlySetup = lib.mkForce false;
 
   hardware.sensor.iio.enable = true;
 

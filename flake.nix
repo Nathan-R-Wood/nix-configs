@@ -94,7 +94,7 @@
                     ./modules/games/packwiz.nix
                     ./modules/hardware/nvme.nix
                     ./modules/hardware/bluetooth.nix
-                    ./modules/gui/de/plasma.nix
+                    ./modules/gui/de/cosmic.nix
                     ./modules/gui/emacs.nix
                     ./modules/gui/fonts.nix
                     ./modules/gui/general.nix

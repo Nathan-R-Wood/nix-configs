@@ -6,8 +6,6 @@
     polkit-kde-agent-1
     kdeconnect-kde
     partitionmanager
-    ksystemlog
-    sddm-kcm
   ];
   networking.firewall = {
     enable = true;
