@@ -46,7 +46,7 @@
    libinput
   ];
 
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.videoDrivers = [ "amdgpu" "modesetting" ];
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
