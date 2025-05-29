@@ -50,7 +50,6 @@
 
   hardware.sensor.iio.enable = true;
 
-  hardware.amdgpu.initrd.enable = true;
   hardware.amdgpu.opencl.enable = true;
 
   hardware.graphics = {
