@@ -46,11 +46,11 @@
    libinput
   ];
 
-  services.xserver.videoDrivers = [ "amdgpu" ];
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
+#  services.xserver.videoDrivers = [ "amdgpu" ];
+#  hardware.graphics = {
+#    enable = true;
+#    enable32Bit = true;
+#  };
 
   console.earlySetup = lib.mkForce false;
 

@@ -3,7 +3,6 @@
   services.desktopManager.cosmic.xwayland.enable = true;
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
-  services.xserver.enable = true;
   programs.xwayland.enable = true;
   # Hint to Electron that it's running under wayland.
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -33,6 +32,5 @@
     cosmic-edit
     cosmic-bg
     cosmic-osd
-    cosmic-store
   ];
 }
