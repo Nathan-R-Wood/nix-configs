@@ -48,15 +48,12 @@
 
   console.earlySetup = lib.mkForce false;
 
-  hardware.sensor.iio.enable = true;
-
-  hardware.amdgpu.opencl.enable = true;
+  hardware.sensor.iio.enable = false; # The sensor works but there isn't an easy way to use it
 
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

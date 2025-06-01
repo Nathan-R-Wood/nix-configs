@@ -82,6 +82,9 @@
                         home-manager.useGlobalPkgs = true;
                         home-manager.users.allthebeans = import ./modules/home.nix;
                     }
+                    "${nix-hardware}/common/cpu/amd/pstate.nix"
+                    "${nix-hardware}/common/cpu/amd/zenpower.nix"
+                    "${nix-hardware}/common/cpu/amd/raphael/igpu.nix"
                     ./modules/allow-unfree.nix
                     ./systems/gui/malenia/configuration.nix
                     ./modules/utilities.nix
