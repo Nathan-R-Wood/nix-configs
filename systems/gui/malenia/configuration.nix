@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-unstable,lib,  ... }:
+{ config, pkgs-unstable,lib,  ... }:
 
 {
   imports =
@@ -40,7 +40,7 @@
     allowedUDPPorts = [ 25565 ];
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-unstable; [
    nvtopPackages.amd
    framework-tool
    libinput
