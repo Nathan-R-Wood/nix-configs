@@ -50,6 +50,7 @@
 
   hardware.sensor.iio.enable = false; # The sensor works but there isn't an easy way to use it
 
+  services.xserver.videoDrivers = [ "modeset" ];
   hardware.graphics = {
     enable = true;
     enable32Bit = true;

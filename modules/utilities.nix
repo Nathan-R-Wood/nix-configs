@@ -25,6 +25,8 @@
     nvd
     util-linux
     kubernetes
+    nix-output-monitor
+    nh
   ];
 
   # Lets some things get firmware updates which probably only helps.

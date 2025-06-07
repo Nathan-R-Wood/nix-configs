@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.kernelParams = [ "modeset" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/a52bd6b7-bb4c-4106-963d-aabaa8e4d38d";
@@ -27,7 +28,7 @@
 
   swapDevices = [ {
     device = "/mnt/.swapfile";
-    size = 9*1024;
+    size = 16*1024;
   } ]; 
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
