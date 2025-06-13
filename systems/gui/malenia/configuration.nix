@@ -51,7 +51,7 @@
 
   hardware.sensor.iio.enable = false; # The sensor works but there isn't an easy way to use it
 
-  services.xserver.videoDrivers = [ "modeset" "amdgpu" ];
+  services.xserver.videoDrivers = [ "amdgpu" ];
   services.xserver.enable = true;
   hardware.graphics = {
     enable = true;

@@ -10,6 +10,7 @@
   
   environment.systemPackages = with pkgs-unstable; [
     xwayland
+    libsForQt5.xwaylandvideobridge
     xdg-desktop-portal-cosmic
     cosmic-session
     cosmic-applets
