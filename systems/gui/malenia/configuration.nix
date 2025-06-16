@@ -33,7 +33,7 @@
   services.libinput.enable = true;
 
   services.power-profiles-daemon.enable = true;
-  services.fprintd.enable = false; #The fingerprint reader actually works really well, but software side of things doesn't always play nixe with it.
+  services.fprintd.enable = true;
 
   networking.firewall = {
     enable = true;
@@ -51,7 +51,7 @@
 
   hardware.sensor.iio.enable = false; # The sensor works but there isn't an easy way to use it
 
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.videoDrivers = [ "modeset" "amdgpu" ];
   services.xserver.enable = true;
   hardware.graphics = {
     enable = true;

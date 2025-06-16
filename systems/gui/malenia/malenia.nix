@@ -12,7 +12,7 @@
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.kernelParams = [ "modeset" ];
+  boot.kernelParams = [ "modeset" "amdgpu.sg_display=0" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/a52bd6b7-bb4c-4106-963d-aabaa8e4d38d";
