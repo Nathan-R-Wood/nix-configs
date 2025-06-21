@@ -11,7 +11,7 @@
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" "amdgpu" ];
   boot.initrd.kernelModules = [  ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ "amdgpu" ];
+  boot.extraModulePackages = [ ];
   boot.kernelParams = [ "modeset" ];
 
   fileSystems."/" =
