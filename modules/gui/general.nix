@@ -5,7 +5,7 @@
         brave
         element-desktop
         discord
-        signal-desktop
+        #signal-desktop
         wayland-utils
         hardinfo2
     ];
