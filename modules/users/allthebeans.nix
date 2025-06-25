@@ -10,4 +10,6 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDg26eeOJ8a2idJmHGH1/3aApR8nf/kw2QYbNpQ7cjcn wizarddragonpublic@gmail.com"
     ];
   };
+  
+  programs.git.enable = true;
 }
