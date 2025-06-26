@@ -52,6 +52,7 @@
   hardware.sensor.iio.enable = false; # The sensor works but there isn't an easy way to use it
 
   services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
