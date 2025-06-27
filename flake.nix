@@ -78,10 +78,10 @@
                     };
                 };
                 modules = [
-                    #home-manager.nixosModules.home-manager {
-                    #    home-manager.useGlobalPkgs = true;
-                    #    home-manager.users.allthebeans = import ./modules/home.nix;
-                    #}
+                    home-manager.nixosModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.users.allthebeans = import ./modules/home.nix;
+                    }
                     "${nix-hardware}/common/cpu/amd/pstate.nix"
                     "${nix-hardware}/common/cpu/amd/zenpower.nix"
                     "${nix-hardware}/common/cpu/amd/raphael/igpu.nix"
