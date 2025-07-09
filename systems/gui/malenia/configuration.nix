@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs-unstable.linuxPackages_latest;
-  boot.plymouth.enable = true;
+  boot.plymouth.enable = false;
 
   networking.hostName = "Malenia"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -50,10 +50,6 @@
   console.earlySetup = lib.mkForce false;
 
   hardware.sensor.iio.enable = false; # The sensor works but there isn't an easy way to use it
-
-  services.xserver.enable = true;
-  services.xserver.autorun = false;
-  services.xserver.videoDrivers = [ "amdgpu" ];
 
   hardware.graphics = {
     enable = true;
