@@ -55,6 +55,40 @@
     enable = true;
     enable32Bit = true;
   };
+  hardware.amdgpu.initrd.enable = true;
+  services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
+
+  hardware.nvidia.modesetting.enable = false;
+  hardware.nvidia.prime.allowExternalGpu = true;
+  hardware.nvidia.prime.offload.enable = true;
+  hardware.nvidia.open = true;
+  hardware.nvidia.prime.nvidiaBusId = "PCI:@0:195:0:5";
+  hardware.nvidia.prime.amdgpuBusId = "PCI:@0:193:0:0";
+
+  # external display on the eGPU card
+  # otherwise it's discrete mode using laptop screen
+  specialisation = {
+    external-display.configuration = {
+        system.nixos.tags = [ "external-display" ];
+        hardware.nvidia.modesetting.enable = pkgs-unstable.lib.mkForce false;
+        hardware.nvidia.prime.offload.enable = pkgs-unstable.lib.mkForce false;
+        hardware.nvidia.powerManagement.enable = pkgs-unstable.lib.mkForce false;
+        services.xserver.config = pkgs-unstable.lib.mkOverride 0
+        ''
+          Section "Module"
+            Load           "modesetting"
+          EndSection
+
+          Section "Device"
+            Identifier     "Device0"
+            Driver         "nvidia"
+            BusID          "@0:195:0:5"
+            Option         "AllowEmptyInitialConfiguration"
+            Option         "AllowExternalGpus" "True"
+          EndSection
+          '';
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
