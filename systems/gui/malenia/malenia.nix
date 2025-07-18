@@ -15,15 +15,15 @@
   boot.kernelParams = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/a52bd6b7-bb4c-4106-963d-aabaa8e4d38d";
-      fsType = "ext4";
-      options = ["noatime" "defaults"];
+    { device = "/dev/disk/by-uuid/2e831617-96db-4831-b74a-db466cc6f111";
+      fsType = "btrfs";
+      options = ["noatime" "ssd" "space_cache=v2" "defaults"];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/04D7-9EEF";
+    { device = "/dev/disk/by-uuid/6C01-2C33";
       fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
+      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
