@@ -5,7 +5,7 @@
   systemd.mounts = [{
     type = "nfs";
     mountConfig = {
-      Options = [ "noatime" "soft" "_netdev" "noauto" ];
+      Options = [ "noatime" "soft" "_netdev" "noauto" "nofail"];
     };
     what = "great-jar.tailcbbdd7.ts.net:/Vault";
     where = "/mnt/Vault";

@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs-unstable.linuxPackages_latest;
-  boot.plymouth.enable = false;
+  boot.plymouth.enable = true;
 
   networking.hostName = "Malenia"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -32,7 +32,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  services.power-profiles-daemon.enable = true;
+  services.power-profiles-daemon.enable = false;
   services.fprintd.enable = true;
 
   networking.firewall = {
@@ -42,15 +42,14 @@
   };
 
   environment.systemPackages = with pkgs-unstable; [
-   nvtopPackages.amd
+   nvtopPackages.full
    framework-tool
    libinput
    kdePackages.plasma-thunderbolt
+   kdePackages.frameworkintegration
   ];
 
   services.hardware.bolt.enable = true;
-
-  console.earlySetup = lib.mkForce false;
 
   hardware.sensor.iio.enable = false; # The sensor works but there isn't an easy way to use it
 
