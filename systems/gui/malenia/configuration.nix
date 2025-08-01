@@ -32,7 +32,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  services.power-profiles-daemon.enable = false;
+  services.power-profiles-daemon.enable = true;
   services.fprintd.enable = true;
 
   networking.firewall = {
