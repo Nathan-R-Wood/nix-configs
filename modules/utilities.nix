@@ -41,8 +41,7 @@
     settings.PasswordAuthentication = false;
     settings.PermitRootLogin = "no";
     settings.KbdInteractiveAuthentication = false;
-    # Changed from the default port of 22 so gitlab can use 22
-    ports = [24];
+    ports = [22];
   };
   programs.gnupg.agent = {
     enable = true;
