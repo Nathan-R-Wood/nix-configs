@@ -11,6 +11,8 @@
     shellAliases = {
       dive = "dive --source podman ";
       nix-generations = "cd /nix/var/nix/profiles/ && ls ";
+      ls = "eza --icons=auto --color=auto ";
+      cat = "bat ";
     };
     history = {
       size = 1000;

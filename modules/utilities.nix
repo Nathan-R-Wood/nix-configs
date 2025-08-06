@@ -17,16 +17,24 @@
     pciutils # lspci
     usbutils # lsusb
     btop # prettier top
+    duf # better df -h
+    eza # better ls
+    fastfetch
+    coreutils-full
+    util-linux
+    lsof
+    bat # pretty cat
+    gnutar
+    tldr # man with examples
     git
     tailscale
     nfs-utils
     dive
     podman-tui
-    nvd
-    util-linux
+    nvd # nixos diffs
     kubernetes
     nix-output-monitor
-    nh
+    nh # wrapper for nix build that uses nvd
   ];
 
   # Lets some things get firmware updates which probably only helps.

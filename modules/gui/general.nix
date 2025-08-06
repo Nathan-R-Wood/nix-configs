@@ -10,6 +10,10 @@
         hardinfo2
         logseq
         calibre
+        onefetch # neofetch for git
+        streamlink # pipe video from online into a local player
+        ffmpeg
+        mpv
     ];
     # Configure keymap in X11 xWayland also requires this atleast from what i can find.
     services.xserver = {
