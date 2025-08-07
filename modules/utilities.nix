@@ -49,6 +49,7 @@
     settings.PasswordAuthentication = false;
     settings.PermitRootLogin = "no";
     settings.KbdInteractiveAuthentication = false;
+    settings.UsePAM = true;
     ports = [22];
   };
   programs.gnupg.agent = {
