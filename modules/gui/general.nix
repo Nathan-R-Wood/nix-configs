@@ -14,6 +14,7 @@
         streamlink # pipe video from online into a local player
         ffmpeg
         mpv
+        vulkan-tools
     ];
     # Configure keymap in X11 xWayland also requires this atleast from what i can find.
     services.xserver = {
