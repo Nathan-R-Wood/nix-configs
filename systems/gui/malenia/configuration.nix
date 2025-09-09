@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs-unstable,lib,  ... }:
+{ config, pkgs-unstable, pkgs, pkgs-master, lib, ... }:
 
 {
   imports =
@@ -11,9 +11,9 @@
     ];
 
   # Bootloader.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs-unstable.linuxPackages_latest;
   boot.plymouth.enable = true;
 
   networking.hostName = "Malenia"; # Define your hostname.
@@ -41,7 +41,7 @@
     allowedUDPPorts = [ 25565 ];
   };
 
-  environment.systemPackages = with pkgs-unstable; [
+  environment.systemPackages = with pkgs; [
    nvtopPackages.full
    framework-tool
    libinput
@@ -63,7 +63,7 @@
   hardware.nvidia = {
     modesetting.enable = false;
     powerManagement.enable = false;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = pkgs-unstable.linuxPackages_latest.nvidiaPackages.beta;
     open = true;
     prime = {
       allowExternalGpu = true;

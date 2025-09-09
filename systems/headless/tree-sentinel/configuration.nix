@@ -9,7 +9,7 @@
   networking.networkmanager.enable = true;
   networking.firewall.enable = false; 
 
-  boot.loader.grub.enable = true;
+  boot.loader.grub.enable = lib.mkForce true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
   boot.loader.efi.canTouchEfiVariables = true;

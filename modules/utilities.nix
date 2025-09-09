@@ -35,6 +35,8 @@
     kubernetes
     nix-output-monitor
     nh # wrapper for nix build that uses nvd
+    sysbench
+    iperf
   ];
 
   # Lets some things get firmware updates which probably only helps.

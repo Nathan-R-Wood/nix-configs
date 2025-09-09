@@ -3,9 +3,10 @@
     environment.systemPackages = with pkgs; [
         qmk
         brave
+        firefox
         element-desktop
         discord
-        #signal-desktop
+        signal-desktop
         wayland-utils
         hardinfo2
         logseq
