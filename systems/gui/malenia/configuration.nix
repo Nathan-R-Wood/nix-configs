@@ -3,15 +3,21 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs-unstable, pkgs, pkgs-master, lib, ... }:
+  # Needed for kernels from anything other than stable now for some reason
+  let
+    inherit (config.boot.kernelPackages) kernel;
+  in {
+    system.modulesTree = [
+      (lib.getOutput "modules" kernel)
+    ];
 
-{
   imports =
     [ # Include the results of the hardware scan.
       ./malenia.nix
     ];
 
   # Bootloader.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs-unstable.linuxPackages_latest;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.plymouth.enable = true;
@@ -41,7 +47,7 @@
     allowedUDPPorts = [ 25565 ];
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-unstable; [
    nvtopPackages.full
    framework-tool
    libinput
@@ -60,10 +66,11 @@
   services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
   hardware.amdgpu.initrd.enable = true;
 
+  hardware.nvidia-container-toolkit.enable = true;
   hardware.nvidia = {
     modesetting.enable = false;
     powerManagement.enable = false;
-    package = pkgs-unstable.linuxPackages_latest.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
     open = true;
     prime = {
       allowExternalGpu = true;
