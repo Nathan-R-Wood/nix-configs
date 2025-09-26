@@ -6,7 +6,6 @@
         nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs-master.url = "github:nixos/nixpkgs/master";
         home-manager.url = "github:nix-community/home-manager/release-25.05";
-        nix-hardware.url = "github:nixos/nixos-hardware/master";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         raspberry-pi-nix.url = "github:nix-community/raspberry-pi-nix";
         raspberry-pi-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -82,9 +81,6 @@
                         home-manager.useGlobalPkgs = true;
                         home-manager.users.allthebeans = import ./modules/home.nix;
                     }
-                    "${nix-hardware}/common/cpu/amd/pstate.nix"
-                    "${nix-hardware}/common/cpu/amd/zenpower.nix"
-                    "${nix-hardware}/common/cpu/amd/raphael/igpu.nix"
                     ./modules/allow-unfree.nix
                     ./systems/gui/malenia/configuration.nix
                     ./modules/utilities.nix

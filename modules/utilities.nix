@@ -37,6 +37,7 @@
     nh # wrapper for nix build that uses nvd
     sysbench
     iperf
+    fwts # firmware test suite
   ];
 
   # Lets some things get firmware updates which probably only helps.

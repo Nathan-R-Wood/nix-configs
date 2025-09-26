@@ -7,10 +7,9 @@
   let
     inherit (config.boot.kernelPackages) kernel;
   in {
-    system.modulesTree = [
-      (lib.getOutput "modules" kernel)
-    ];
-
+        system.modulesTree = [
+          (lib.getOutput "modules" kernel)
+        ];
   imports =
     [ # Include the results of the hardware scan.
       ./malenia.nix
