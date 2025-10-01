@@ -20,50 +20,6 @@
         # The modules section is just a list of files that will be referenced and loaded for that systems config. I can use that to separate individual programs or groups of programs like say obs and kdenlive to only be on my main desktop and maybe the steam deck since those are the only systems that will have both a gui and the power nescesary to do video recording/editing.
         nixosConfigurations = {
 
-            Tarnished = nixpkgs.lib.nixosSystem rec {
-                system = "x86_64-linux";
-                specialArgs = {
-                    inherit inputs;
-                    pkgs-unstable = import nixpkgs-unstable {
-                        inherit system;
-                        config.allowUnfree = true;
-                    };
-                    pkgs-master = import nixpkgs-master {
-                        inherit system;
-                        config.allowUnfree = true;
-                    };
-                };
-                modules = [
-                    home-manager.nixosModules.home-manager {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.users.allthebeans = import ./modules/home.nix;
-                    }
-                    ./modules/allow-unfree.nix
-                    ./systems/gui/tarnished/configuration.nix
-                    ./modules/games/steam.nix
-                    ./modules/games/minecraft.nix
-                    ./modules/games/packwiz.nix
-                    ./modules/users/allthebeans.nix
-                    ./modules/utilities.nix
-                    ./modules/hardware/nvme.nix
-                    ./modules/hardware/nvidia.nix
-                    ./modules/hardware/bluetooth.nix
-                    ./modules/gui/de/plasma.nix
-                    ./modules/gui/general.nix
-                    ./modules/gui/unstable.nix
-                    ./modules/gui/heavy-unstable.nix
-                    ./modules/gui/emacs.nix
-                    ./modules/gui/fonts.nix
-                    ./modules/gui/heavy.nix
-                    ./modules/gui/kdepackages.nix
-                    ./modules/dev/micro-controller.nix
-                    ./modules/dev/sbc.nix
-                    ./modules/virt/qemu.nix
-                    ./modules/servers/vault.nix
-                    ./modules/servers/container-storage.nix
-                ];
-            };
-
             Malenia = nixpkgs.lib.nixosSystem rec {
                 system = "x86_64-linux";
                 specialArgs = {

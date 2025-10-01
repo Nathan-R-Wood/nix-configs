@@ -17,6 +17,7 @@
         mpv
         vulkan-tools
         qpwgraph
+        photoqt
     ];
     # Configure keymap in X11 xWayland also requires this atleast from what i can find.
     services.xserver = {
