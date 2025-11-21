@@ -32,7 +32,14 @@
   networking.networkmanager.enable = true;
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.epson-escpr ];
+  };
+  services.avahi = { #Enables network discovery for printers
+    enable = true;
+    nssmdns4 = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
