@@ -26,9 +26,9 @@
 
   programs.git = {
     enable = true;
-    userName = "nathan-r-wood";
-    userEmail = "nathanroywood@proton.me";
-    extraConfig = {
+    settings = {
+      user.name = "nathan-r-wood";
+      user.email = "nathanroywood@proton.me";
       init.defaultBranch = "main";
       column.ui = "auto";
       branch.sort = "-committerdate";

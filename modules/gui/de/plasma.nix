@@ -14,7 +14,7 @@
     kdePackages.wayland
     kdePackages.wayland-protocols
     xwayland
-    kdePackages.xwaylandvideobridge
+    #kdePackages.xwaylandvideobridge
     kdePackages.kwayland
   ];
 }

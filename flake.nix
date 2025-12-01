@@ -2,10 +2,10 @@
     description = "Manages all of my systems.";
 
     inputs = {
-        nixpkgs.url = "nixpkgs/nixos-25.05";
+        nixpkgs.url = "nixpkgs/nixos-25.11";
         nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs-master.url = "github:nixos/nixpkgs/master";
-        home-manager.url = "github:nix-community/home-manager/release-25.05";
+        home-manager.url = "github:nix-community/home-manager/release-25.11";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         raspberry-pi-nix.url = "github:nix-community/raspberry-pi-nix";
         raspberry-pi-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -54,7 +54,7 @@
                     ./modules/gui/kdepackages.nix
                     ./modules/dev/micro-controller.nix
                     ./modules/dev/networking.nix
-                    #./modules/dev/sbc.nix
+                    ./modules/dev/sbc.nix
                     ./modules/virt/qemu.nix
                     ./modules/servers/vault.nix
                     ./modules/servers/container-storage.nix
