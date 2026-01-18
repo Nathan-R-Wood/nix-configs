@@ -22,14 +22,14 @@
     fastfetch
     coreutils-full
     util-linux
-    lsof
+    lsof # list open files
     bat # pretty cat
     gnutar
     tldr # man with examples
     git
     tailscale
     nfs-utils
-    dive
+    dive # Container disk explorer
     podman-tui
     nvd # nixos diffs
     kubernetes
