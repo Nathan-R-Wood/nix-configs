@@ -8,6 +8,15 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
+  nixConfig = {
+    extra-substituters = [
+      "ssh://malenia.tailcbbdd7.ts.net"
+    ];
+    extra-trusted-public-keys = [
+      "malenia.tailcbbdd7.ts.net:XBIwc+pGC3MPqbQz3qmSnqganQofJ5VhCpYoVB6Fcxg="
+    ];
+  };
+  
   boot.initrd.availableKernelModules = [ "xhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];

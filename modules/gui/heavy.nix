@@ -9,7 +9,7 @@
     krita
     blender
     android-udev-rules
-    android-tools
+    android-tools 
   ];
 
   users.groups.adbusers.members = [ "allthebeans" ]; #for android tools
