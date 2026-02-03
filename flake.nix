@@ -11,6 +11,15 @@
         raspberry-pi-nix.inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixConfig= {
+      extra-substituters = [
+        "ssh://malenia.tailcbbdd7.ts.net"
+      ];
+      extra-trusted-public-keys = [
+        "malenia.tailcbbdd7.ts.net:XBIwc+pGC3MPqbQz3qmSnqganQofJ5VhCpYoVB6Fcxg="
+      ];
+    };
+
    # If you yourself aren't part of what contributes to the output is this even reality?
     outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, ...}: with inputs; {
         # Not sure if anything else goes in here but all of the individual computers do. Seems like the patern is to start with a hostname that forms a little block for lack of a better term.
