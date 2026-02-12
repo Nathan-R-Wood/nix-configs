@@ -55,6 +55,12 @@
     settings.UsePAM = true;
     ports = [22];
   };
+
+  security.pam = {
+    sshAgentAuth.enable = true;
+    services.sudo.sshAgentAuth = true;
+  };
+  
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
