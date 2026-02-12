@@ -1,15 +1,16 @@
-{ config, pkgs, ... }: {
+{ config, nixos-raspberrypi, ... }: {
 
   imports = [ # Include the results of the hardware scan.
     ./container-orchestrator.nix
   ];
 
-  raspberry-pi-nix.board = "bcm2712";
-
-  environment.systemPackages = with pkgs; [
-    libraspberrypi
-    raspberrypi-eeprom
-  ];
+    system.nixos.tags = let
+      cfg = config.boot.loader.raspberry-pi;
+    in [
+      "raspberry-pi-${cfg.variant}"
+      cfg.bootloader
+      config.boot.kernelPackages.kernel.version
+    ];
 
   networking.hostName = "Container-orchestrator"; # Define your hostname.
 

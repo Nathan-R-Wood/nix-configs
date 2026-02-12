@@ -7,8 +7,7 @@
         nixpkgs-master.url = "github:nixos/nixpkgs/master";
         home-manager.url = "github:nix-community/home-manager/release-25.11";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
-        raspberry-pi-nix.url = "github:nix-community/raspberry-pi-nix";
-        raspberry-pi-nix.inputs.nixpkgs.follows = "nixpkgs";
+        nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     };
 
    # If you yourself aren't part of what contributes to the output is this even reality?
@@ -104,9 +103,7 @@
                     ./systems/headless/blaidd/configuration.nix
                     ./modules/utilities.nix
                     ./modules/users/allthebeans.nix
-                    ./modules/servers/nfs-client.nix
                     ./modules/servers/server-utils.nix
-                    ./modules/servers/vpn-client.nix
                     ./modules/servers/container-storage.nix
                 ];
             };
@@ -127,15 +124,25 @@
                 ];
             };
 
-            Container-orchestrator = nixpkgs.lib.nixosSystem rec {
+            Container-orchestrator = nixos-raspberrypi.lib.nixosSystem rec {
                 system = "aarch64-linux";
+                specialArgs = {
+                    nixos-raspberrypi = import nixos-raspberrypi {
+                      inherit system;
+                      config.allowUnfree = true;
+                    };
+                };
                 modules = [
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
                         home-manager.users.allthebeans = import ./modules/home.nix;
                     }
-                    raspberry-pi-nix.nixosModules.raspberry-pi
-                    raspberry-pi-nix.nixosModules.sd-image
+                    {
+                      imports = with nixos-raspberrypi.nixosModules; [
+                        raspberry-pi-5.base
+                        raspberry-pi-5.page-size-16k
+                      ];
+                    }
                     ./systems/headless/container-orchestrator/configuration.nix
                     ./modules/utilities.nix
                     ./modules/users/allthebeans.nix
