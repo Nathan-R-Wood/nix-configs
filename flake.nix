@@ -105,6 +105,7 @@
                     ./modules/users/allthebeans.nix
                     ./modules/servers/server-utils.nix
                     ./modules/servers/container-storage.nix
+                    ./modules/servers/k3s-agent.nix
                 ];
             };
 
@@ -121,6 +122,7 @@
                     ./modules/servers/vpn-serv.nix
                     ./modules/servers/server-utils.nix
                     ./modules/servers/container-storage.nix
+                    ./modules/servers/k3s-server.nix
                 ];
             };
 
