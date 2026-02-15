@@ -1,9 +1,8 @@
 { config, pkgs, ... }: {
 
   services.k3s = {
-    enable = true;
+    enable = false;
     role = "server";
-    tokenFile = "/home/allthebeans/.k3s-token";
     clusterInit = true;
   };
 
