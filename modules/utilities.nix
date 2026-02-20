@@ -32,7 +32,6 @@
     dive # Container disk explorer
     podman-tui
     nvd # nixos diffs
-    kubernetes
     nix-output-monitor
     nh # wrapper for nix build that uses nvd
     sysbench

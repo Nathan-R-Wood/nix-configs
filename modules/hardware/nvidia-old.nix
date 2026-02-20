@@ -11,6 +11,7 @@
   boot.kernelPackages = pkgs.linuxPackages;
   services.xserver.videoDrivers = ["nvidia"]; # will install nvidia-vaapi-driver by default.
   hardware.nvidia-container-toolkit.enable = true;
+  hardware.nvidia-container-toolkit.mount-nvidia-executables = true;
   hardware.nvidia = {
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
