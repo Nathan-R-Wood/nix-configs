@@ -91,6 +91,7 @@
                     ./modules/hardware/nvidia-old.nix
                     ./modules/servers/container-storage.nix
                     ./modules/servers/k3s-agent.nix
+                    ./modules/virt/qemu.nix
                 ];
             };
 
