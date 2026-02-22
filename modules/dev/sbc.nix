@@ -1,6 +1,6 @@
-{ config, pkgs, ... }: {
+{ config, pkgs-unstable, ... }: {
 
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgs-unstable; [
         rpiboot # lets computer see raspberry pi cm storage over usb
         rpi-imager
         libusb1 # library for usb to see raspberry pi cm storage

@@ -14,6 +14,7 @@
   users.groups.podman.members = [ "allthebeans" ];
 
   environment.systemPackages = with pkgs; [
+    screen # so i have a better way of managing long running commands
     pciutils # lspci
     usbutils # lsusb
     btop # prettier top

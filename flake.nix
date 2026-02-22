@@ -127,14 +127,9 @@
                 ];
             };
 
-            Container-orchestrator = nixos-raspberrypi.lib.nixosSystem rec {
+            Birthday-boy = nixos-raspberrypi.lib.nixosSystem rec {
                 system = "aarch64-linux";
-                specialArgs = {
-                    nixos-raspberrypi = import nixos-raspberrypi {
-                      inherit system;
-                      config.allowUnfree = true;
-                    };
-                };
+                specialArgs = inputs;
                 modules = [
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
@@ -142,15 +137,15 @@
                     }
                     {
                       imports = with nixos-raspberrypi.nixosModules; [
-                        raspberry-pi-5.base
-                        raspberry-pi-5.page-size-16k
+                        raspberry-pi-4.base
                       ];
                     }
-                    ./systems/headless/container-orchestrator/configuration.nix
+                    ./systems/headless/birthday-boy/configuration.nix
                     ./modules/utilities.nix
                     ./modules/users/allthebeans.nix
                     ./modules/servers/server-utils.nix
                     ./modules/servers/container-storage.nix
+                    ./modules/servers/k3s-agent.nix
                 ];
             };
 
