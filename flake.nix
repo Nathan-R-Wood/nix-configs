@@ -62,6 +62,12 @@
 
             Radahn = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
+                specialArgs = {
+                  pkgs-unstable = import nixpkgs-unstable {
+                    inherit system;
+                    config.allowUnfree = true;
+                  };
+                };
                 modules = [
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
@@ -78,6 +84,12 @@
 
             Tree-sentinel = nixpkgs.lib.nixosSystem rec {
                 system = "x86_64-linux";
+                specialArgs = {
+                  pkgs-unstable = import nixpkgs-unstable {
+                    inherit system;
+                    config.allowUnfree = true;
+                  };
+                };
                 modules = [
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
