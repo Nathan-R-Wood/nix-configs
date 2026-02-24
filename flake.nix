@@ -162,6 +162,29 @@
                 ];
             };
 
+            Birthday-boy-2 = nixos-raspberrypi.lib.nixosSystem rec {
+                system = "aarch64-linux";
+                specialArgs = inputs;
+                modules = [
+                    home-manager.nixosModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.users.allthebeans = import ./modules/home.nix;
+                    }
+                    {
+                      imports = with nixos-raspberrypi.nixosModules; [
+                        raspberry-pi-5.base
+                        raspberry-pi-5.page-size-16k
+                      ];
+                    }
+                    ./systems/headless/birthday-boy/configuration.nix
+                    ./modules/utilities.nix
+                    ./modules/users/allthebeans.nix
+                    ./modules/servers/server-utils.nix
+                    ./modules/servers/container-storage.nix
+                    ./modules/servers/k3s-agent.nix
+                ];
+            };
+            
             Iso = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
