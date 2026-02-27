@@ -102,7 +102,7 @@
                     ./modules/allow-unfree.nix
                     ./modules/hardware/nvidia-old.nix
                     ./modules/servers/container-storage.nix
-                    ./modules/servers/k3s-agent.nix
+                    ./modules/servers/k3s-server-add.nix
                     ./modules/virt/qemu.nix
                 ];
             };
@@ -158,7 +158,7 @@
                     ./modules/users/allthebeans.nix
                     ./modules/servers/server-utils.nix
                     ./modules/servers/container-storage.nix
-                    ./modules/servers/k3s-agent.nix
+                    ./modules/servers/k3s-server-add.nix
                 ];
             };
 

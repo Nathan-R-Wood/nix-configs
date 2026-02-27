@@ -1,9 +1,10 @@
-{ config, nixos-raspberrypi, ... }: {
+{ config, nixos-raspberrypi, lib, ... }: {
 
   imports = [ # Include the results of the hardware scan.
     ./birthday-boy-2.nix
   ];
-
+  boot.loader.raspberry-pi.bootloader = lib.mkForce "kernel";
+    
     system.nixos.tags = let
       cfg = config.boot.loader.raspberry-pi;
     in [
