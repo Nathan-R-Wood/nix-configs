@@ -133,25 +133,18 @@
                     ./systems/headless/jar-bairn/configuration.nix
                     ./modules/utilities.nix
                     ./modules/users/allthebeans.nix
-                    ./modules/servers/vpn-serv.nix
                     ./modules/servers/server-utils.nix
                     ./modules/servers/container-storage.nix
                     ./modules/servers/k3s-server.nix
                 ];
             };
 
-            Birthday-boy = nixos-raspberrypi.lib.nixosSystem rec {
+            Birthday-boy = nixpkgs.lib.nixosSystem rec {
                 system = "aarch64-linux";
-                specialArgs = inputs;
                 modules = [
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
                         home-manager.users.allthebeans = import ./modules/home.nix;
-                    }
-                    {
-                      imports = with nixos-raspberrypi.nixosModules; [
-                        raspberry-pi-4.base
-                      ];
                     }
                     ./systems/headless/birthday-boy/configuration.nix
                     ./modules/utilities.nix

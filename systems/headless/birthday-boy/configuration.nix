@@ -1,16 +1,17 @@
-{ config, nixos-raspberrypi, ... }: {
+{ config, pkgs, ... }: {
 
   imports = [ # Include the results of the hardware scan.
     ./birthday-boy.nix
   ];
 
-    system.nixos.tags = let
-      cfg = config.boot.loader.raspberry-pi;
-    in [
-      "raspberry-pi-${cfg.variant}"
-      cfg.bootloader
-      config.boot.kernelPackages.kernel.version
-    ];
+  boot = {
+    kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
+    initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
+    loader = {
+      grub.enable = false;
+      generic-extlinux-compatible.enable = true;
+    };
+  };
 
   networking.hostName = "Birthday-boy"; # Define your hostname.
 

@@ -23,11 +23,6 @@
     raspberrypi-eeprom
   ];
 
-  services.nfs.server.enable = true;
-  services.nfs.server.exports = ''
-      /mnt/2tb/ 10.69.69.0/24(rw,all_squash,anonuid=1000,anongid=1000,nohide,insecure,no_subtree_check)
-  '';
-
   networking.hostName = "Jar-bairn"; # Define your hostname.
 
   # Enable networking
