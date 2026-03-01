@@ -4,7 +4,6 @@
     ./birthday-boy-2.nix
   ];
   boot.loader.raspberry-pi.bootloader = lib.mkForce "kernel";
-    
     system.nixos.tags = let
       cfg = config.boot.loader.raspberry-pi;
     in [

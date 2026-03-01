@@ -11,7 +11,7 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-label/NIXOS_SD";
+    { device = lib.mkForce "/dev/disk/by-label/NIXOS_SD";
       fsType = "ext4";
     };
 

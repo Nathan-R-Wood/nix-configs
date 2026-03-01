@@ -169,7 +169,7 @@
                         raspberry-pi-5.page-size-16k
                       ];
                     }
-                    ./systems/headless/birthday-boy/configuration.nix
+                    ./systems/headless/birthday-boy-2/configuration.nix
                     ./modules/utilities.nix
                     ./modules/users/allthebeans.nix
                     ./modules/servers/server-utils.nix
