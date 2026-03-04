@@ -5,6 +5,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
+  boot.kernelParams = [ "cgroup_enable=memory" "cgroup_enable=cpuset" "cgroup_memory=1" ];
   boot.initrd.availableKernelModules = [ "xhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
