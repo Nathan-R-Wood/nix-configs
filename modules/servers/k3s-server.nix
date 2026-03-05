@@ -5,7 +5,7 @@
     role = "server";
     clusterInit = true;
     extraFlags = [
-      "tls-san jar-bairn.tailcbbdd7.ts.net"
+      "--tls-san jar-bairn.tailcbbdd7.ts.net"
     ];
   };
 
