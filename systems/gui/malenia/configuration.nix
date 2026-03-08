@@ -69,22 +69,8 @@
     enable = true;
     enable32Bit = true;
   };
-  services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
+  services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.amdgpu.initrd.enable = true;
-
-  hardware.nvidia-container-toolkit.enable = true;
-  hardware.nvidia = {
-    modesetting.enable = false;
-    powerManagement.enable = false;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
-    open = true;
-    prime = {
-      allowExternalGpu = true;
-      sync.enable = true;
-      nvidiaBusId = "PCI:@0:5:0:0";
-      amdgpuBusId = "PCI:@0:193:0:0";
-    };
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
