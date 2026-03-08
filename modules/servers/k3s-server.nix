@@ -6,6 +6,7 @@
     clusterInit = true;
     extraFlags = [
       "--tls-san jar-bairn.tailcbbdd7.ts.net"
+      "--flannel-iface tailscale0"
     ];
   };
 
