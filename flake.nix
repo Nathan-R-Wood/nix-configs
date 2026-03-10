@@ -65,6 +65,7 @@
             Radahn = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 specialArgs = {
+                  inherit inputs;
                   pkgs-unstable = import nixpkgs-unstable {
                     inherit system;
                     config.allowUnfree = true;
@@ -75,6 +76,7 @@
                         home-manager.useGlobalPkgs = true;
                         home-manager.users.allthebeans = import ./modules/home.nix;
                     }
+                    microvm.nixosModules.microvm
                     ./systems/headless/radahn/configuration.nix
                     ./modules/utilities.nix
                     ./modules/users/allthebeans.nix
