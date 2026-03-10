@@ -83,7 +83,6 @@
                     ./modules/users/defin.nix
                     ./modules/servers/server-utils.nix
                     ./modules/servers/container-storage.nix
-                    ./modules/servers/k3s-agent.nix
                 ];
             };
 
