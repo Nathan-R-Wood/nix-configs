@@ -14,6 +14,43 @@
      # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
+    microvm.hypervisor = "cloud-hypervisor";
+    microvm.shares = [{
+      source = "/nix/store";
+      mountPoint = "/nix/.ro-store";
+      tag = "ro-store";
+      proto = "virtiofs";
+    }];
+    microvm.volumes = [{
+      image = "/var/lib/microvms/Radahn/root.raw";
+      mountPoint = "/";
+      size = 100000;
+      label = "root";
+    }];
+    microvm.hotplugMem = 80000;
+    microvm.hotpluggedMem = 1500;
+
+    microvm.interfaces = [{
+      type = "tap";
+      id = "vm-Radahn";
+      mac = "02:00:00:00:00:02";
+    }];
+    microvm.vcpu = 28;
+
+    systemd.network = {
+      enable = true;
+      networks."20-lan" = {
+        matchConfig.Type = "ether";
+        networkConfig = {
+          Address = ["10.1.15.103/24" "2001:db8::c/64"];
+          Gateway = "10.1.15.254";
+          DNS = ["8.8.8.8"];
+          IPv6AcceptRA = true;
+          DHCP = "no";
+        };
+      };
+    };
+    
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # # programs.mtr.enable = true;
