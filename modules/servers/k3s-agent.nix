@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  
+  systemd.services.k3s.after = [ "tailscaled.service" ];
   services.k3s = {
     enable = true;
     role = "agent";
