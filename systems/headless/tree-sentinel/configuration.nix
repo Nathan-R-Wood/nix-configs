@@ -9,6 +9,10 @@
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
 
+  services.tailscale.useRoutingFeatures = "both";
+  services.tailscale.extraUpFlags = [
+    "--advertise-routes=10.0.0.0/24"
+  ];
   services.watchdogd = {
     enable = true;
     settings = {
