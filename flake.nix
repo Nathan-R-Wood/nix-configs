@@ -8,6 +8,8 @@
         home-manager.url = "github:nix-community/home-manager/release-25.11";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
+        microvm.url = "github:microvm-nix/microvm.nix";
+        microvm.inputs.nixpkgs.follows = "nixpkgs";
     };
 
    # If you yourself aren't part of what contributes to the output is this even reality?
