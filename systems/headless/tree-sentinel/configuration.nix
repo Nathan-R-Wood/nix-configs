@@ -22,6 +22,11 @@
     };
   };
 
+  services.nfs.server.enable = true;
+  services.nfs.server.exports = ''
+      /slow *.tailcbbdd7.ts.net(rw,all_squash,anonuid=1000,anongid=1000,nohide,insecure,no_subtree_check)
+  '';
+  
   boot.loader.grub.enable = lib.mkForce true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
