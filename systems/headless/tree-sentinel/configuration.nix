@@ -10,7 +10,7 @@
   networking.firewall.enable = false;
 
   services.tailscale.useRoutingFeatures = "both";
-  services.tailscale.extraUpFlags = [
+  services.tailscale.extraSetFlags = [
     "--advertise-routes=10.0.0.0/24"
   ];
   services.watchdogd = {
