@@ -1,10 +1,9 @@
 
-{ config, pkgs-unstable, ... }: {
+{ config, pkgs-unstable, lib, osConfig,   ... }: {
   services.desktopManager.cosmic.xwayland.enable = true;
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
   programs.xwayland.enable = true;
-  services.xserver.enable = true;
   # Hint to Electron that it's running under wayland.
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   users.groups.video.members = [ "allthebeans" ]; #honestly out of other ideas for weird video issues
@@ -34,4 +33,7 @@
     cosmic-bg
     cosmic-osd
   ];
+
+  # i was hoping to stop gnome-keyring from hijacking ssh
+  services.gnome.gcr-ssh-agent.enable = lib.mkForce false;
 }

@@ -21,9 +21,10 @@
     initContent = "path+=('/home/allthebeans/.emacs.d/bin')";
     sessionVariables = {
       DOOMDIR = "$HOME/.doom.d";
+      GPG_TTY="$(tty)";
     };
   };
-
+  
   programs.git = {
     enable = true;
     settings = {

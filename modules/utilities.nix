@@ -65,6 +65,10 @@
     enable = true;
     enableSSHSupport = true;
   };
+  
+  environment.variables = {
+    SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh";
+  };
 
   services.tailscale.enable = true;
 

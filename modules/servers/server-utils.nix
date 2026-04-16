@@ -5,7 +5,7 @@
 
   security.pam.sshAgentAuth.enable = true;
 
-  boot.kernelParams = [ "panic=10" ];
+  boot.kernelParams = [ "panic=10" "softlockup_panic=1" ];
   
   services.watchdogd = {
     enable = true;

@@ -10,7 +10,6 @@
         nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
         microvm.url = "github:microvm-nix/microvm.nix";
         microvm.inputs.nixpkgs.follows = "nixpkgs";
-        river-kwm.url = "github:rowsred/river_kwm_modules_nixos"; 
     };
 
    # If you yourself aren't part of what contributes to the output is this even reality?
@@ -25,6 +24,7 @@
             Malenia = nixpkgs.lib.nixosSystem rec {
                 system = "x86_64-linux";
                 specialArgs = {
+                    inherit inputs;
                     pkgs-unstable = import nixpkgs-unstable {
                         inherit system;
                         config.allowUnfree = true;
@@ -48,7 +48,7 @@
                     ./modules/games/packwiz.nix
                     ./modules/hardware/nvme.nix
                     ./modules/hardware/bluetooth.nix
-                    ./modules/gui/de/cosmic.nix
+                    ./modules/gui/de/plasma.nix
                     ./modules/gui/emacs.nix
                     ./modules/gui/fonts.nix
                     ./modules/gui/general.nix
