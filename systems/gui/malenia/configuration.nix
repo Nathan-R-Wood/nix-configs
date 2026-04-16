@@ -16,7 +16,7 @@
     ];
 
   # Bootloader.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs-unstable.linuxPackages_latest;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.plymouth.enable = true;
@@ -53,7 +53,7 @@
     allowedUDPPorts = [ 25565 ];
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-unstable; [
    nvtopPackages.full
    framework-tool
    libinput
