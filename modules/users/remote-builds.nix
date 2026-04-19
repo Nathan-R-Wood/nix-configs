@@ -9,9 +9,13 @@
     ];
   };
 
-  security.sudo.extraRules = [
-    { users = [ "remotebuild" ];
-      options = [ "NOPASSWD" ];
+  security.sudo.extraRules= [
+    {  users = [ "remotebuild" ];
+       commands = [
+         { command = "ALL" ;
+         options= [ "NOPASSWD" ]; # "SETENV" # Adding the following could be a good idea
+         }
+       ];
     }
   ];
 
