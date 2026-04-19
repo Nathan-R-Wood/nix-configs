@@ -10,7 +10,7 @@
   };
 
   security.sudo.extraRules = [
-    { users = [ "myusername" ];
+    { users = [ "remotebuild" ];
       options = [ "NOPASSWD" ];
     }
   ];
