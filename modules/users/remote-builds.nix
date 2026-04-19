@@ -8,4 +8,11 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHeBjHUYq2tW1WWHKN6S5io/qyflo0ssDJeBVF4wRne8 remote-builder" 
     ];
   };
+
+  security.sudo.extraRules = [
+    { users = [ "myusername" ];
+      options = [ "NOPASSWD" ];
+    }
+  ];
+
 }
