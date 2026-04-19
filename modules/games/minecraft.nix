@@ -2,6 +2,5 @@
 
     environment.systemPackages = with pkgs; [
         prismlauncher
-        zulu25
     ];
 }

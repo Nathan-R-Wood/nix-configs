@@ -2,9 +2,11 @@
   systemd.tmpfiles.rules = [
     "f /var/lib/systemd/linger/allthebeans"
   ];
-
-  security.pam.sshAgentAuth.enable = true;
-
+  
+  imports = [
+    ../users/remote-builds.nix
+  ];
+  
   boot.kernelParams = [ "panic=10" "softlockup_panic=1" ];
   
   services.watchdogd = {
