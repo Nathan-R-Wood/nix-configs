@@ -6,7 +6,7 @@
        #     cudaSupport = true;
        #})
        #cudaPackages.cudatoolkit
-        blender-hip
+       pkgsRocm.blender
     ];
 
     users.groups.dialout.members = [ "allthebeans" ]; #for prusa firmware updates
