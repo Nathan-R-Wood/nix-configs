@@ -2,10 +2,11 @@
 {
     environment.systemPackages = with pkgs-unstable; [
         prusa-slicer
-       (pkgsRocm.blender.override {
-            cudaSupport = true;
-       })
-       cudaPackages.cudatoolkit
+       #(pkgsRocm.blender.override {
+       #     cudaSupport = true;
+       #})
+       #cudaPackages.cudatoolkit
+        blender-hip
     ];
 
     users.groups.dialout.members = [ "allthebeans" ]; #for prusa firmware updates

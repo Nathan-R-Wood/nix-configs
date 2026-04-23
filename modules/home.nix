@@ -53,6 +53,14 @@
     };
   };
 
+  programs.btop = {
+    enable = true;
+    settings = {
+      theme_background = false; # make btop transparent
+      proc_aggregate = true; # aggregate subprocess resources in tree view
+    };
+  };
+
   programs.starship = {
     enable = true;
     settings = pkgs.lib.importTOML ./starship.toml;
