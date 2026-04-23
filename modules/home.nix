@@ -56,7 +56,9 @@
   programs.btop = {
     enable = true;
     settings = {
+      color_theme = "TTY";
       theme_background = false; # make btop transparent
+      proc_tree = true;
       proc_aggregate = true; # aggregate subprocess resources in tree view
     };
   };

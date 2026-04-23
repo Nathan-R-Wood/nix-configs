@@ -17,7 +17,6 @@
     screen # so i have a better way of managing long running commands
     pciutils # lspci
     usbutils # lsusb
-    btop # prettier top
     duf # better df -h
     eza # better ls
     fastfetch

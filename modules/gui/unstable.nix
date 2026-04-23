@@ -8,6 +8,8 @@
        #cudaPackages.cudatoolkit
        pkgsRocm.blender
     ];
+    
+    programs.coolercontrol.enable = true;
 
     users.groups.dialout.members = [ "allthebeans" ]; #for prusa firmware updates
 }
