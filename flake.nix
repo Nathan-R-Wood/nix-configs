@@ -113,6 +113,30 @@
                 ];
             };
 
+            Lichdragon-fortissax = nixpkgs.lib.nixosSystem rec {
+                system = "x86_64-linux";
+                specialArgs = {
+                  pkgs-unstable = import nixpkgs-unstable {
+                    inherit system;
+                    config.allowUnfree = true;
+                  };
+                };
+                modules = [
+                    home-manager.nixosModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.users.allthebeans = import ./modules/home.nix;
+                    }
+                    ./systems/headless/lichdragon-fortissax/configuration.nix
+                    ./modules/utilities.nix
+                    ./modules/users/allthebeans.nix
+                    ./modules/servers/server-utils.nix
+                    ./modules/allow-unfree.nix
+                    ./modules/servers/container-storage.nix
+                    ./modules/virt/qemu.nix
+                    ./modules/servers/k3s-agent.nix
+                ];
+            };
+
             Blaidd = nixpkgs.lib.nixosSystem {
                 system =  "aarch64-linux";
                 modules = [
@@ -187,7 +211,6 @@
             Iso = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
-                    "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
                     ({pkgs, config, lib, ...}: {services.openssh.settings.PermitRootLogin = lib.mkForce "no";})
                     ./modules/utilities.nix
                     ./modules/users/allthebeans.nix

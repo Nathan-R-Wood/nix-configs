@@ -56,6 +56,7 @@
   environment.systemPackages = with pkgs-unstable; [
    nvtopPackages.full
    framework-tool
+   fw-ectool
    libinput
    kdePackages.plasma-thunderbolt
    kdePackages.frameworkintegration
