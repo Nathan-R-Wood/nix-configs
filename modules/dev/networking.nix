@@ -1,5 +1,5 @@
-{ config, pkgs-unstable, ... }: {
-  environment.systemPackages = with pkgs-unstable; [
+{ config, pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
     wireshark
   ];
 
