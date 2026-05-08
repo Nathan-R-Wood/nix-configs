@@ -10,6 +10,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+
+  environment.systemPackages = with pkgs; [
+    ipmitool
+  ];
+    
   networking.hostName = "Lichdragon-fortissax"; # Define your hostname.
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
