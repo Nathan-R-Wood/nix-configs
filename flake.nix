@@ -12,6 +12,15 @@
         microvm.inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixConfig = {
+      extra-substituters = [
+        "https://nixos-raspberrypi.cachix.org"
+      ];
+      extra-trusted-public-keys = [
+        "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
+      ];
+    };
+    
    # If you yourself aren't part of what contributes to the output is this even reality?
     outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, ...}: with inputs; {
         # Not sure if anything else goes in here but all of the individual computers do. Seems like the patern is to start with a hostname that forms a little block for lack of a better term.
