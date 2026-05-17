@@ -11,7 +11,6 @@
 
   nix.settings = {
     trusted-users = [ "remotebuild" ];
-    allowed-users = [ "remotebuild" ]; 
   };
   
   security.sudo.extraRules= [
