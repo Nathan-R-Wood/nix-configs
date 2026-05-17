@@ -8,17 +8,6 @@
         home-manager.url = "github:nix-community/home-manager/release-25.11";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
-        microvm.url = "github:microvm-nix/microvm.nix";
-        microvm.inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixConfig = {
-      extra-substituters = [
-        "https://nixos-raspberrypi.cachix.org"
-      ];
-      extra-trusted-public-keys = [
-        "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
-      ];
     };
     
    # If you yourself aren't part of what contributes to the output is this even reality?
@@ -69,31 +58,6 @@
                     ./modules/virt/qemu.nix
                     ./modules/servers/vault.nix
                     ./modules/servers/container-storage.nix
-                ];
-            };
-
-            Radahn = nixpkgs.lib.nixosSystem {
-                system = "x86_64-linux";
-                specialArgs = {
-                  inherit inputs;
-                  pkgs-unstable = import nixpkgs-unstable {
-                    inherit system;
-                    config.allowUnfree = true;
-                  };
-                };
-                modules = [
-                    home-manager.nixosModules.home-manager {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.users.allthebeans = import ./modules/home.nix;
-                    }
-                    microvm.nixosModules.microvm
-                    ./systems/headless/radahn/configuration.nix
-                    ./modules/utilities.nix
-                    ./modules/users/allthebeans.nix
-                    ./modules/users/defin.nix
-                    ./modules/servers/server-utils.nix
-                    ./modules/servers/container-storage.nix
-                    ./modules/servers/k3s-agent.nix
                 ];
             };
 
