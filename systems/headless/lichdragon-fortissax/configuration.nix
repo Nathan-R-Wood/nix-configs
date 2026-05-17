@@ -15,7 +15,7 @@
     ipmitool
   ];
 
-  nix.settings.system-features = [ "nixos-test" "benchmark" "big-parallel" "kvm" "binfmt" "aarch64-linux" ];
+  nix.settings.system-features = [ "nixos-test" "benchmark" "big-parallel" "kvm" "binfmt" "aarch64-linux" "llvm" ];
   
   networking.hostName = "Lichdragon-fortissax"; # Define your hostname.
   networking.networkmanager.enable = true;
