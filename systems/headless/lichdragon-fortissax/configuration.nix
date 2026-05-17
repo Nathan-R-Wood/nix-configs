@@ -14,7 +14,9 @@
   environment.systemPackages = with pkgs; [
     ipmitool
   ];
-    
+
+  nix.settings.system-features = [ "nixos-test" "benchmark" "big-parallel" "kvm" "binfmt" ];
+  
   networking.hostName = "Lichdragon-fortissax"; # Define your hostname.
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
