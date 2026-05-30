@@ -18,6 +18,12 @@
     };
   };
 
+  boot.kernelParams = [
+    "pcie_port_pm=off" # Disable PCIe port power management
+    "igc.eee_enable=0" # Disable Energy Efficient Ethernet
+  ];
+
+  
   environment.systemPackages = with pkgs; [
     libraspberrypi
     raspberrypi-eeprom
@@ -26,7 +32,10 @@
   networking.hostName = "Jar-bairn"; # Define your hostname.
 
   # Enable networking
-  networking.networkmanager.enable = true;
+
+  networking.networkmanager = {
+    enable = true;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
