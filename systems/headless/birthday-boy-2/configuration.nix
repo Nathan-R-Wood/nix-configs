@@ -12,6 +12,8 @@
       config.boot.kernelPackages.kernel.version
     ];
 
+    boot.kernelPackages = nixos-raspberrypi.linuxPackages_latest;
+    
   networking.hostName = "Birthday-boy-2"; # Define your hostname.
 
   # Enable networking
