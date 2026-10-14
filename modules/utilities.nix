@@ -27,6 +27,7 @@
     gnutar
     tldr # man with examples
     git
+    git-lfs
     tailscale
     nfs-utils
     dive # Container disk explorer
