@@ -14,7 +14,7 @@
   hardware.nvidia-container-toolkit.mount-nvidia-executables = true;
   hardware.nvidia = {
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.legacy_304;
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
     # Modesetting is needed for most Wayland compositors
     modesetting.enable = true;
     # Use the open source version of the kernel module
