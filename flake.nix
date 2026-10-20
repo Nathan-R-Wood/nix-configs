@@ -82,7 +82,7 @@
                     ./modules/allow-unfree.nix
                     ./modules/hardware/nvidia-old.nix
                     ./modules/servers/container-storage.nix
-                    ./modules/servers/k3s-server-add.nix
+                    ./modules/servers/k3s-server-nvidia.nix
                     ./modules/virt/qemu.nix
                 ];
             };
