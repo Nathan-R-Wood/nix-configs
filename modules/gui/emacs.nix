@@ -7,12 +7,12 @@
         clang
         cmake
         gnumake
-        gcc14
+        gcc
         libvterm
         libtool
-        python3
-        python312Packages.grip
-        python312Packages.pip
+        python314
+        python314Packages.grip
+        python314Packages.pip
         ispell
     ];
 }

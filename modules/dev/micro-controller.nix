@@ -1,9 +1,10 @@
 { config, pkgs, ... }: {
     environment.systemPackages = with pkgs; [
         minicom # serial connection
-        gcc14
+        gcc
         gnumake
         cmake
         gcc-arm-embedded
+        python314Packages.west
     ];
 }
