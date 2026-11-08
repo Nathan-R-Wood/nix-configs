@@ -2,7 +2,6 @@
 
     environment.systemPackages = with pkgs; [
         qmk
-        brave
         firefox
         element-desktop
         discord
