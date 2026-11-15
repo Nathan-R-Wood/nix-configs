@@ -68,4 +68,17 @@
     enable = true;
     settings = pkgs.lib.importTOML ./starship.toml;
   };
+
+  programs.nix-search-tv = {
+    enable = true;
+    settings = {
+      indexes = [ "nixpkgs" "home-manager" "nixos" ];
+
+      experimental = {
+        render_docs_indexes = {
+          nvf = "https://notashelf.github.io/nvf/options.html";
+        };
+      };
+    };
+  };
 }

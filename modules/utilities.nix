@@ -38,7 +38,6 @@
     sysbench
     iperf
     fwts # firmware test suite
-    nix-search-tv
     fzf
   ];
 
