@@ -75,6 +75,8 @@
   hardware.amdgpu.initrd.enable = true;
   
   hardware.nvidia-container-toolkit.enable = true;
+  hardware.nvidia-container-toolkit.suppressNvidiaDriverAssertion = true; # Let's the nvidia container toolkit stay enabled since the nvidia driver is installed, but just not enabled on boot.
+    
   hardware.nvidia = {
     modesetting.enable = false;
     powerManagement.enable = false;
