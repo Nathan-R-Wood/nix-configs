@@ -16,7 +16,7 @@
     framework-laptop-kmod
     cpupower
     zenpower
-    linuxPackages_latest.nvidia_x11
+    nvidia_x11
   ];
 
   fileSystems."/" =
