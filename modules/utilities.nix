@@ -39,6 +39,7 @@
     iperf
     fwts # firmware test suite
     nix-search-tv
+    fzf
   ];
 
   # Lets some things get firmware updates which probably only helps.
