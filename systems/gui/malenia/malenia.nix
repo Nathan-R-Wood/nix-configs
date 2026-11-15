@@ -10,7 +10,7 @@
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" "amd-pstate" "zenpower" ];
-  boot.blacklistedKernelModules = [  ];
+  boot.blacklistedKernelModules = [ "nouveau" "nvidia_drm" "nvidia_modeset" "nvidia" ];
   boot.kernelParams = [ "amd_pstate=active" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [
     framework-laptop-kmod

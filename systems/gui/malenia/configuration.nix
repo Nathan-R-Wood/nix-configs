@@ -60,6 +60,7 @@
    libinput
    kdePackages.plasma-thunderbolt
    kdePackages.frameworkintegration
+   linuxPackages.nvidia_x11
   ];
 
   services.hardware.bolt.enable = true;
@@ -70,7 +71,7 @@
     enable = true;
     enable32Bit = true;
   };
-  services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
+  services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.amdgpu.initrd.enable = true;
   
   hardware.nvidia-container-toolkit.enable = true;
