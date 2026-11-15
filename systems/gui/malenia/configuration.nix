@@ -80,8 +80,11 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     open = true;
     prime = {
+      offload.enable = true; #Offload rendering jobs to nvidia gpu
       allowExternalGpu = true;
-      #sync.enable = true;
+      reverseSync.enable = true; # Does not use the nvidia gpu for rendering, but does use it's display ports
+      offload.enableOffloadCmd = true; # Script to offload a program to the nvidia gpu nvidia-offload %command%
+      reverseSync.setupCommands.enable = true; # Should let the dsiplay manager control nvidia gpu outputs
       nvidiaBusId = "PCI:@0:5:0:0";
       amdgpuBusId = "PCI:@0:193:0:0";
     };
