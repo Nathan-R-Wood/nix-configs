@@ -13,6 +13,7 @@
       nix-generations = "cd /nix/var/nix/profiles/ && ls ";
       ls = "eza --icons=auto --color=auto ";
       cat = "bat ";
+      ns="nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     };
     history = {
       size = 1000;

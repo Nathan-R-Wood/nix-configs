@@ -38,6 +38,7 @@
     sysbench
     iperf
     fwts # firmware test suite
+    nix-search-tv
   ];
 
   # Lets some things get firmware updates which probably only helps.
