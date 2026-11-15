@@ -60,7 +60,7 @@
    libinput
    kdePackages.plasma-thunderbolt
    kdePackages.frameworkintegration
-   linuxPackages.nvidia_x11
+   linuxPackages_latest.nvidia_x11
   ];
 
   services.hardware.bolt.enable = true;
